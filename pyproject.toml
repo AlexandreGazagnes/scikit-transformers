@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "scikit-res"
-version = "0.1.1"
-description = "Very Basic package to store results of ML models"
+name = "scikit-transformers"
+version = "0.1.0"
+description = "Very Basic package make some usefull log transformation for scikit-learn"
 authors = ["AlexandreGazagnes <alex@gazagnes.net>"]
 readme = "README.md"
-packages = [{include = "skres"}]
+packages = [{include = "sktransf"}]
 
 [tool.poetry.dependencies]
 python = "3.10.12"
-scikit-learn = "^1.4.0"
-pandas = "^2.1.4"
+scikit-learn = ">=1.0.0"
+pandas = ">=1.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -23,6 +23,7 @@ jupyter-contrib-nbextensions = "^0.7.0"
 nbconvert = "7.14.1"
 black = {extras = ["jupyter"], version = "^23.12.1"}
 ipython = "^8.18.1"
+seaborn = "^0.13.2"
 
 [tool.poetry.group.qa.dependencies]
 pytest = "^7.4.4"
