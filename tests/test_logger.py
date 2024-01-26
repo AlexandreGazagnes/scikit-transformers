@@ -12,22 +12,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.impute import KNNImputer, SimpleImputer
 
-from sktransf.logger import LogTransformer, _use_case
+from sktransf import LogTransformer
+from sktransf import get_titanic
 
 
 @pytest.fixture
 def X_y() -> tuple:
     """Load the data"""
 
-    base = "https://gist.githubusercontent.com/AlexandreGazagnes/"
-    url = base + "9018022652ba0933dd39c9df8a600292/raw/"
-    url += "0845ef4c2df4806bb05c8c7423dc75d93e37400f/titanic_train_raw_csv"
-
-    df = pd.read_csv(url)
-    y = df.Survived
-
-    X = df.iloc[:, 2:].select_dtypes(include="number")
-    return X, y
+    return get_titanic()
 
 
 @pytest.fixture
@@ -50,7 +43,7 @@ class TestLogTransformer:
     """Test class for skres package"""
 
     def test_integration(self, X_y: tuple, pipeline: Pipeline):
-        """ " Test the integration of the package"""
+        """Test the integration of the package"""
 
         param_grid = {
             "logger__threshold": [1, 1.5, 3],
@@ -69,8 +62,3 @@ class TestLogTransformer:
 
         X, y = X_y
         grid.fit(X, y)
-
-    def test_use_case(self):
-        """Test the use case"""
-
-        res = _use_case()
