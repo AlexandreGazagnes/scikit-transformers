@@ -1,41 +1,70 @@
 """
+Logarithm transformer
 """
 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import GridSearchCV
+
+from sklearn.base import BaseEstimator, TransformerMixin
 
 
 class LogTransformer(BaseEstimator, TransformerMixin):
-    """ """
+    """Logarithm transformer
 
-    def __init__(self, threshold=3, out="np"):
-        """ """
+    Opt args:
+    - threshold: int or float, default=3
+        Threshold to apply the log transformation
+    - force_df_out: bool, default=False
+        If True, the output will be a pd.DataFrame
+        if False, the output will be a np.ndarray
+    """
+
+    def __init__(
+        self,
+        threshold: int | float = 3,
+        force_df_out: bool = False,
+    ):
+        """Initialize the transformer"""
 
         if not isinstance(threshold, (float, int)):
             raise TypeError("threshold must be a float or an integer")
 
-        if not isinstance(out, str):
-            raise TypeError("out must be a string")
+        if not isinstance(force_df_out, (int, bool)):
+            raise TypeError("out must be a boolean")
 
-        if out not in ["df", "np"]:
-            raise ValueError("out must be 'df' or 'array'")
-
-        self.out = out
+        self.force_df_out = force_df_out
         self.threshold = threshold
 
-    def fit(self, X, y=None):
-        """ """
+    def fit(self, X: pd.DataFrame | np.ndarray, y: None = None):
+        """Fit the transformer (does nothing)
+
+        Pos args:
+            X: pd.DataFrame or np.ndarray
+                The data to fit
+        Opt args:
+            y: None
+                The target to fit
+        """
 
         return self
 
-    def transform(self, X, y=None):
-        """ """
+    def transform(
+        self,
+        X: pd.DataFrame | np.ndarray,
+        y: None = None,
+    ) -> pd.DataFrame | np.ndarray:
+        """Transform the data
 
-        if not isinstance(X, (pd.DataFrame, np.ndarray, np.array, list)):
-            raise TypeError(
-                "X must be a (pd.DataFrame, np.ndarray, np.array, list)"
-            )
+        Pos args:
+            X: pd.DataFrame or np.ndarray
+                The data to transform
+        Opt args:
+            y: None
+                The target to transform
+        """
+
+        if not isinstance(X, (pd.DataFrame, np.ndarray, list)):
+            raise TypeError("X must be a (pd.DataFrame, np.ndarray, list)")
 
         try:
             _X = pd.DataFrame(X).copy()
@@ -48,58 +77,7 @@ class LogTransformer(BaseEstimator, TransformerMixin):
             if skew[col] >= self.threshold:
                 _X[col] = np.log1p(_X[col])
 
-        if self.out == "df":
+        if self.force_df_out:
             return _X
 
         return _X.values
-
-
-def _use_case():
-    """ """
-
-    import numpy as np
-    import pandas as pd
-
-    from sklearn.base import BaseEstimator, TransformerMixin
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.pipeline import Pipeline
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.preprocessing import StandardScaler
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.impute import KNNImputer, SimpleImputer
-
-    base = "https://gist.githubusercontent.com/AlexandreGazagnes/"
-    url = base + "9018022652ba0933dd39c9df8a600292/raw/"
-    url += "0845ef4c2df4806bb05c8c7423dc75d93e37400f/titanic_train_raw_csv"
-
-    df = pd.read_csv(url)
-    y = df.Survived
-
-    X = df.iloc[:, 2:].select_dtypes(include="number")
-
-    pipeline = Pipeline(
-        [
-            ("imputer", SimpleImputer()),
-            ("logger", LogTransformer()),
-            ("scaler", StandardScaler()),
-            ("estimator", LogisticRegression()),
-        ]
-    )
-
-    param_grid = {
-        "logger__threshold": [1, 1.5, 3],
-        "scaler": [StandardScaler(), "passthrough"],
-    }
-
-    grid = GridSearchCV(
-        pipeline,
-        param_grid=param_grid,
-        cv=5,
-        refit=True,
-        return_train_score=True,
-        n_jobs=-1,
-        verbose=1,
-    )
-
-    grid.fit(X, y)

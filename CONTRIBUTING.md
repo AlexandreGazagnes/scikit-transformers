@@ -23,14 +23,6 @@ Then, please install the dependencies using the following command :
 poetry install
 ```
 
-Alternatively, you can install the dependencies using the following command :
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-pip install -r .utils/requirements-dev.txt
-```
 ### Running a specific test
 
 Running a specific test with the environment activated is as easy as:
@@ -42,6 +34,20 @@ With the environment activated you can run all of the tests
 using:
 `pytest tests`
 
-### Documentation
 
-Coming soon ;)
+## Documentation
+
+For generic use case, please refer to this [notebook](docs/simple_example.ipynb).
+
+<!-- For more specific use case, please refer to this [notebook](docs/detailed_example.ipynb). -->
+
+<!-- For more detailed information, please refer to the [documentation](https://alexandregazagnes.github.io/scikit-transformers/). -->
+
+A complete documentation will be soon available [here](https://alexandregazagnes.github.io/scikit-transformers/).
+
+
+## Contributing
+
+Best way to contribute is to open an issue and discuss about it.
+
+Feel free to fork the project and make a pull request.
