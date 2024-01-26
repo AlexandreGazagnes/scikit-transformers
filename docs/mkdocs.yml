@@ -1,0 +1,5 @@
+site_name: SkRes
+site_url: https://alexandregazagnes.github.io/skres
+nav:
+  - Home: index.md
+theme: readthedocs
