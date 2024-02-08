@@ -5,7 +5,8 @@ on:
     types: [ published ]
 
 jobs:
-  publish-service-client-package:
+
+  publish-package:
 
     runs-on: ubuntu-latest
 
@@ -17,7 +18,7 @@ jobs:
       - name: Publish PyPi package
         uses: code-specialist/pypi-poetry-publish@v1
         with:
-          PACKAGE_DIRECTORY: "./skres/"
+          PACKAGE_DIRECTORY: "./sktransf/"
           PYTHON_VERSION: "3.10.12"
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PUBLISH_REGISTRY_PASSWORD }}

@@ -6,5 +6,3 @@ WORKDIR /app
 RUN rm -f /etc/localtime  && ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 RUN apt update -y && apt upgrade -y && apt clean -y
 RUN apt install htop nano python3-pip python3-venv -y
-
-
