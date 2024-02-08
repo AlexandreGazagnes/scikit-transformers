@@ -54,5 +54,5 @@ jobs:
       - name: Run bandit
         run: poetry run bandit .
 
-      - name: Run saftey
+      - name: Run safet<y
         run: poetry run safety check
