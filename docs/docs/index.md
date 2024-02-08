@@ -7,9 +7,12 @@
 [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 ![Coverage](../assets/img/cov.svg)
-![CI](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/ci.yaml/badge.svg)
-![statics](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/statics.yaml/badge.svg)
+![Tests](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/tests.yaml/badge.svg)
+![Statics](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/statics.yaml/badge.svg)
+![Doc](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/docs.yaml/badge.svg)
+![Pypi](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/publish.yaml/badge.svg)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/AlexandreGazagnes/scikit-transformers)
+
 
 
 ## About
