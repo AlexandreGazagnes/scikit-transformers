@@ -11,7 +11,6 @@ python = "3.10.12"
 scikit-learn = ">=1.0.0"
 pandas = ">=1.4.0"
 
-
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
 notebook = "^7.0.6"
@@ -21,29 +20,31 @@ jupytext = "^1.16.1"
 ipywidgets = "^8.1.1"
 jupyter-contrib-nbextensions = "^0.7.0"
 nbconvert = "7.14.1"
-black = {extras = ["jupyter"], version = "^23.12.1"}
+black = {extras = ["jupyter"], version = "^23.10.1"}
 ipython = "^8.18.1"
 seaborn = "^0.13.2"
 
 [tool.poetry.group.qa.dependencies]
-pytest = "^7.4.4"
-isort = "^5.13.2"
-coverage = "^7.4.0"
-coverage-badge = "^1.1.0"
-flake8 = "^7.0.0"
-mypy = "^1.8.0"
-bandit = "^1.7.6"
-pyflakes = "^3.2.0"
-pydocstyle = "^6.3.0"
-mccabe = "^0.7.0"
-safety = "^2.3.5"
-pre-commit = "^3.6.0"
+black = {extras = ["jupyter"], version = "^23.10.1"}
+pep8 = "^1.7.1"
+mypy = "^1.6.1"
+flake8 = "^6.1.0"
+pylint = "^3.0.2"
 pycln = "^2.4.0"
-mkdocs = "1.5.3"
+bandit = "^1.7.7"
+isort = "^5.13.2"
+pycodestyle = "^2.11.1"
+pydocstyle = "^6.3.0"
+vulture = "^2.11"
+mccabe = "^0.7.0"
+pyupgrade = "^3.15.0"
+safety = "^3.0.1"
+# coverage = "^7.3.2"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+coverage = "^7.4.1"
+coverage-badge = "^1.1.0"
 
 [tool.black]
 line-length = 79
@@ -59,5 +60,24 @@ force_grid_wrap = 0
 use_parentheses = true
 ensure_newline_before_comments = true
 
+# [tool.mypy]
+# show_error_codes = true
+# ignore_missing_imports = true
+# no_strict_optional = true
+
+[tool.vulture]
+exclude = ["*file*.py", "dir/"]
+ignore_decorators = ["@app.route", "@require_*"]
+ignore_names = ["visit_*", "do_*"]
+make_whitelist = true
+min_confidence = 80
+paths = ["myscript.py", "mydir", "whitelist.py"]
+sort_by_size = true
+verbose = true
+
 [tool.coverage.run]
 disable_warnings = ["no-data-collected"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
