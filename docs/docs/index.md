@@ -1,12 +1,12 @@
 # Welcome to Scikit-Transformers
 
-![image](../assets/img/img.png)
+![image](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/assets/img/img.png?raw=true)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Python](https://img.shields.io/badge/python-3.10.x-green.svg)
 ![Repo Size](https://img.shields.io/github/repo-size/AlexandreGazagnes/scikit-transformers)
 [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
-![Coverage](../assets/img/cov.svg)
+![Coverage](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/assets/img/cov.svg?raw=true)
 ![Tests](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/tests.yaml/badge.svg)
 ![Statics](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/statics.yaml/badge.svg)
 ![Doc](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/docs.yaml/badge.svg)

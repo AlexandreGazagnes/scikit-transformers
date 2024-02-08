@@ -42,5 +42,13 @@ jobs:
       - name: poetry Install
         run: poetry install
 
+      - name: Run pwd
+        run: pwd
+
       - name: Publish documentation
-        run: cd docs && poetry run mkdocs gh-deploy
+        run: cd ./docs && poetry run mkdocs gh-deploy
+        with:
+          PACKAGE_DIRECTORY: "./sktransf/"
+          PYTHON_VERSION: "3.10.12"
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PUBLISH_REGISTRY_PASSWORD }}
