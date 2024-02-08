@@ -2,16 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from sktransf import LogTransformer, get_titanic
-
-
-@pytest.fixture
-def X() -> pd.DataFrame:
-    """Load the data"""
-
-    X, _ = X_y = get_titanic()
-
-    return X
+from sktransf import LogTransformer
 
 
 class TestLogTransformer:

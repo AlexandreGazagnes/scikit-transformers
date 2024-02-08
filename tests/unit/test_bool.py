@@ -1,30 +1,17 @@
-import numpy as np
 import pandas as pd
-import pytest
 
-from sktransf import BoolColumnTransformer, get_titanic
-
-
-@pytest.fixture
-def X() -> pd.DataFrame:
-    """Load the data"""
-
-    X, _ = X_y = get_titanic()
-
-    X["bool_col"] = np.random.choice(["a", "b"], size=X.shape[0])
-
-    return X
+from sktransf import BoolColumnTransformer
 
 
 class TestBoolColumnTransformer:
     """Test for BoolColumnTransformer"""
 
-    def test_X(self, X: pd.DataFrame):
-        """Test X"""
+    def test_X(self, X_bool: pd.DataFrame):
+        """Test X_bool"""
 
-        assert isinstance(X, pd.DataFrame)
+        assert isinstance(X_bool, pd.DataFrame)
 
-        assert X.bool_col.nunique() == 2
+        assert X_bool.bool_col.nunique() == 2
 
     def test_init(self):
         """Test the init method"""
@@ -34,30 +21,30 @@ class TestBoolColumnTransformer:
 
         assert transformer.bool_cols is None
 
-    def test_fit(self, X: pd.DataFrame):
+    def test_fit(self, X_bool: pd.DataFrame):
         """Test the fit method"""
 
         # create the transformer
         transformer = BoolColumnTransformer()
 
         # fit the transformer
-        transformer.fit(X)
+        transformer.fit(X_bool)
 
         assert transformer.bool_cols == ["bool_col"]
 
-    def test_transform(self, X: pd.DataFrame):
+    def test_transform(self, X_bool: pd.DataFrame):
         """Test the transform method"""
 
         # create the transformer
         transformer = BoolColumnTransformer()
 
         # fit the transformer
-        transformer.fit(X)
+        transformer.fit(X_bool)
 
         # transform
-        X_ = transformer.transform(X)
+        X_bool_ = transformer.transform(X_bool)
 
-        assert isinstance(X_, pd.DataFrame)
-        assert X_.bool_col.nunique() == 2
-        vals = X_.bool_col.unique().tolist()
+        assert isinstance(X_bool_, pd.DataFrame)
+        assert X_bool_.bool_col.nunique() == 2
+        vals = X_bool_.bool_col.unique().tolist()
         assert sorted(vals) == [0, 1]
