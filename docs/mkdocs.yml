@@ -1,6 +1,6 @@
-site_name: Sickit-Transformers Documentation
+site_name: Sickit-Transformers
 theme: readthedocs
-site_url: https://example.com/
+site_url: https://alexandregazagnes.github.io/scikit-transformers/
 nav:
   - Home: index.md
   - About: about.md
