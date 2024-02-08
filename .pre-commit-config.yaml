@@ -29,12 +29,13 @@ repos:
     -   id: check-symlinks
     -   id: check-vcs-permalinks
 
-# pyupgrade
--   repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
-    hooks:
-    -   id: pyupgrade
-        args: [--py39-plus]
+# # pyupgrade
+# -   repo: https://github.com/asottile/pyupgrade
+#     rev: v3.15.0
+#     hooks:
+#     -   id: pyupgrade
+#         args: [--py39-plus]
+
 
 # # autotpep8
 # -   repo: https://github.com/hhatto/autopep8
@@ -79,13 +80,13 @@ repos:
         name: pycln
         args: [--config=pyproject.toml]
 
-# # vulture
-# -   repo: https://github.com/jendrikseipp/vulture
-#     rev: 'v2.3'  # or any later Vulture version
-#     hooks:
-#     -   id: vulture
-#         name: vulture
-#         # args: [--min-confidence=100]
+# vulture
+-   repo: https://github.com/jendrikseipp/vulture
+    rev: 'v2.3'  # or any later Vulture version
+    hooks:
+    -   id: vulture
+        name: vulture
+        # args: [--min-confidence=100]
 
 # # pylint
 # -   repo: https://github.com/pre-commit/mirrors-pylint
