@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
+pd.set_option("future.no_silent_downcasting", True)
+
+
 class DropUniqueColumnTransformer(BaseEstimator, TransformerMixin):
     """Drops columns with only one unique value
 

@@ -10,7 +10,7 @@ around the numpy log function.
 from ._get_titanic import get_titanic
 from ._use_case import use_case
 from .bool import BoolColumnTransformer
-from .drop_unique import DropUniqueColumnTransformer
+from .unique import DropUniqueColumnTransformer
 from .log import LogColumnTransformer
 
 
