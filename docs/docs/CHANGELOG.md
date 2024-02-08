@@ -9,13 +9,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 - Full support for official documentation
-- Add auto documentation with GitHub pages
+- Add auto deploy documentation with GitHub pages
 
 ### Updated
 - Moove assets and utils to docs folder
 - Restructure all package
 - Update documentation to include usage examples
 - Moove Changelog and Contributing to the docs folder
+- Clean code files, remove unused imports, useless comments, and unused variables
 
 ## [0.2.0] - 2024-02-08
 

@@ -13,7 +13,6 @@ python = "3.10.12"
 scikit-learn = ">=1.0.0"
 pandas = ">=1.4.0"
 
-
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
 notebook = "^7.0.6"
@@ -27,7 +26,6 @@ black = {extras = ["jupyter"], version = "^23.10.1"}
 ipython = "^8.18.1"
 seaborn = "^0.13.2"
 pre-commit = "^3.6.0"
-
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.5.3"
@@ -48,8 +46,6 @@ mccabe = "^0.7.0"
 pyupgrade = "^3.15.0"
 safety = "^3.0.1"
 # coverage = "^7.3.2"
-
-
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.3"

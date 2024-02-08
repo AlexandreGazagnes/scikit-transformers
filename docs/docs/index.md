@@ -1,5 +1,3 @@
-# Welcome to Scikit-Transformers
-
 ![image](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/assets/img/img.png?raw=true)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Python](https://img.shields.io/badge/python-3.10.x-green.svg)
@@ -13,6 +11,7 @@
 ![Pypi](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/publish.yaml/badge.svg)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/AlexandreGazagnes/scikit-transformers)
 
+# Scikit-transformers : Scikit-learn + Custom transformers
 
 
 ## About
@@ -20,6 +19,7 @@
 Basic package to enable usefull transformers in scikit-learn pipelines.
 
 First transformer implemented is a LogTransformer, which is a simple wrapper around the numpy log function.
+
 
 ## Installation
 
@@ -29,11 +29,10 @@ Using regular pip and venv tools :
 python3 -m venv .venv
 source .venv/bin/activate
 pip install scikit-transformers
-
 ```
 
-## Usage
 
+## Usage
 
 ### Most basic usage
 
@@ -49,11 +48,10 @@ df = pd.DataFrame(
     }
 )
 
-    logger = LogTransformer()
-    logger.fit_transform(df)
-    df_transf = logger.transform(df)
+logger = LogTransformer()
+logger.fit_transform(df)
+df_transf = logger.transform(df)
 ```
-
 
 ### Using common transformers
 
@@ -68,10 +66,9 @@ df = pd.DataFrame(
     }
 )
 
-    df_bool = BoolColumnTransformer().fit_transform(df)
-    df_unique = DropUniqueColumnTransformer().fit_transform(df)
-    df_logged = LogTransformer().fit_transform(df)
-
+df_bool = BoolColumnTransformer().fit_transform(df)
+df_unique = DropUniqueColumnTransformer().fit_transform(df)
+df_logged = LogTransformer().fit_transform(df)
 ```
 
 ### Using a pipeline
@@ -83,14 +80,11 @@ from sklearn.pipeline import Pipeline
 
 from sktransf import LogTransformer, DropUniqueColumnTransformer, BoolColumnTransformer
 
-
 pipe = Pipeline([
     ('bool', BoolColumnTransformer()),
     ('unique', DropUniqueColumnTransformer()),
     ('log', LogTransformer())
 ])
-
-
 
 df = pd.DataFrame(
     { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -99,7 +93,6 @@ df = pd.DataFrame(
 )
 
 df_transf = pipe.fit_transform(df)
-
 ```
 
 ### Using a pipeline with a scikit-learn model
@@ -129,13 +122,12 @@ y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 pipe.fit(X, y)
 
 y_pred = pipe.predict(X)
-
 ```
 
 
 ## Documentation
 
-For generic use case, please refer to this [notebook](docs/simple_example.ipynb).
+For generic use case, please refer to this [notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/simple_example.ipynb).
 
 <!-- For more specific use case, please refer to this [notebook](docs/detailed_example.ipynb). -->
 
@@ -146,7 +138,7 @@ A complete documentation will be soon available on the  [github page](https://al
 
 ## Changelog, Releases and Roadmap
 
-Please refer to the [changelog](./docs/docs/CHANGELOG.md) file for more information.
+Please refer to the [changelog](https://alexandregazagnes.github.io/scikit-transformers/CHANGELOG/) file for more information.
 
 
 ## Contributing
@@ -155,8 +147,9 @@ Pull requests are welcome.
 
 For major changes, please open an issue first to discuss what you would like to change.
 
-For more information, please refer to the [contributing](./docs/docs/CONTRIBUTING.md) file.
+For more information, please refer to the [contributing](https://alexandregazagnes.github.io/scikit-transformers/CONTRIBUTING/) file.
+
 
 ## License
 
-[GPLv3](LICENSE)
+[GPLv3](https://raw.githubusercontent.com/AlexandreGazagnes/scikit-transformers/main/LICENSE)

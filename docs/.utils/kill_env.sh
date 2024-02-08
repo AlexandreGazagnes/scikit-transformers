@@ -1,6 +1,5 @@
 #! /bin/sh
 
-
 rm -rf .venv
 rm -rf poetry.lock
 
