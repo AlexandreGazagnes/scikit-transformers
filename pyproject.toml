@@ -11,6 +11,7 @@ python = "3.10.12"
 scikit-learn = ">=1.0.0"
 pandas = ">=1.4.0"
 
+
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
 notebook = "^7.0.6"
@@ -23,6 +24,7 @@ nbconvert = "7.14.1"
 black = {extras = ["jupyter"], version = "^23.10.1"}
 ipython = "^8.18.1"
 seaborn = "^0.13.2"
+pre-commit = "^3.6.0"
 
 [tool.poetry.group.qa.dependencies]
 black = {extras = ["jupyter"], version = "^23.10.1"}
