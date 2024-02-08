@@ -56,7 +56,7 @@ For generic use case, please refer to this [notebook](docs/simple_example.ipynb)
 
 <!-- For more detailed information, please refer to the [documentation](https://alexandregazagnes.github.io/scikit-transformers/). -->
 
-A complete documentation will be soon available [here](https://alexandregazagnes.github.io/scikit-transformers/).
+A complete documentation will be soon available on the  [github page](https://alexandregazagnes.github.io/scikit-transformers/).
 
 
 ## Contributing

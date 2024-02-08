@@ -5,6 +5,7 @@ description = "Very Basic package make some usefull log transformation for sciki
 authors = ["AlexandreGazagnes <alex@gazagnes.net>"]
 readme = "README.md"
 packages = [{include = "sktransf"}]
+urls = { "Code" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main", "Documentation" = "https://alexandregazagnes.github.io/scikit-transformers/", "Repository" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main" }
 
 [tool.poetry.dependencies]
 python = "3.10.12"
