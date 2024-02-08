@@ -1,4 +1,4 @@
-# 2024-02-08 - 0.1.1 - Added a new feature
+# 2024-02-08 - 0.2.0 - Added a new feature
 
 ## Updated
 
