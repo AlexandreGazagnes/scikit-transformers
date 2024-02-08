@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
+pd.set_option("future.no_silent_downcasting", True)
+
+
 class BoolColumnTransformer(BaseEstimator, TransformerMixin):
     """Boleanizer for columns with 2 unique values
 
@@ -19,10 +22,12 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
     def __init__(
         self,
         bool_cols: list[str] | None = None,
+        force_df_out: bool = False,
     ) -> None:
         """init method"""
 
         self.bool_cols = bool_cols
+        self.force_df_out = force_df_out
 
     def fit(
         self,
@@ -72,4 +77,7 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
             # replace
             _X[col] = _X[col].replace(dd)
 
-        return _X
+        if self.force_df_out:
+            return pd.DataFrame(_X)
+
+        return _X.values

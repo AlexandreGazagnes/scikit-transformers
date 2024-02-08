@@ -7,12 +7,6 @@ from sklearn.preprocessing import StandardScaler
 
 from sktransf import BoolColumnTransformer
 
-# @pytest.fixture
-# def X_y() -> tuple:
-#     """Load the data"""
-
-#     return get_titanic()
-
 
 @pytest.fixture
 def pipeline():

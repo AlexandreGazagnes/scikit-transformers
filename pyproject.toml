@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "scikit-transformers"
-version = "0.2.0"
+version = "0.2.1"
 description = "Very Basic package make some usefull log transformation for scikit-learn"
 authors = ["AlexandreGazagnes <alex@gazagnes.net>"]
 readme = "README.md"
