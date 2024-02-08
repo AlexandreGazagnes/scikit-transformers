@@ -1,13 +1,25 @@
+"""
+Unique drop and Bool transformer
+"""
+
+import numpy as np
+import pandas as pd
+
+from typing import List
+
+from sklearn.base import BaseEstimator, TransformerMixin
+
+
 class DropUniqueColumnTransformer(BaseEstimator, TransformerMixin):
     """Drops columns with only one unique value
 
     Agrs :
         Optional :
-            - unique_cols : list[str] | None : list of columns to drop if they have only one unique value
+            - unique_cols : List[str] | None : list of columns to drop if they have only one unique value
             default : None => will be found during fit
     """
 
-    def __init__(self, unique_cols: list[str] | None = None) -> None:
+    def __init__(self, unique_cols: List[str] | None = None) -> None:
         """init method"""
 
         self.unique_cols = unique_cols
@@ -51,11 +63,11 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
 
     Args :
         Optional :
-            - bool_cols : list[str] | None : list of columns to booleanize
+            - bool_cols : List[str] | None : list of columns to booleanize
             default : None => will be found during fit
     """
 
-    def __init__(self, bool_cols: list[str] | None = None) -> None:
+    def __init__(self, bool_cols: List[str] | None = None) -> None:
         """init method"""
 
         self.bool_cols = bool_cols
