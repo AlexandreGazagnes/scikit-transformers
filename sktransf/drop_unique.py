@@ -2,7 +2,6 @@
 Unique drop transformer
 """
 
-
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -27,7 +26,7 @@ class DropUniqueColumnTransformer(BaseEstimator, TransformerMixin):
 
     def fit(
         self,
-        X: pd.DataFrame | list | np.array,
+        X: pd.DataFrame | list | np.ndarray,
         y=None,
     ):
         """Fit method"""
@@ -50,7 +49,7 @@ class DropUniqueColumnTransformer(BaseEstimator, TransformerMixin):
 
     def transform(
         self,
-        X: pd.DataFrame | list | np.array,
+        X: pd.DataFrame | np.ndarray,
         y=None,
     ) -> pd.DataFrame:
         """Transform method"""
@@ -62,6 +61,6 @@ class DropUniqueColumnTransformer(BaseEstimator, TransformerMixin):
             _X = X.copy()
 
         # drop it
-        _X = _X.drop(columns=self.unique_cols, errors='ignore')
+        _X = _X.drop(columns=self.unique_cols, errors="ignore")
 
         return _X

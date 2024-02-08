@@ -14,7 +14,7 @@ def X() -> pd.DataFrame:
 
     X, _ = X_y = get_titanic()
 
-    X['unique_col'] = 'hello'
+    X["unique_col"] = "hello"
 
     return X
 
@@ -44,7 +44,7 @@ class TestDropUniqueColumnTransformer:
         # fit the transformer
         transformer.fit(X)
 
-        assert transformer.unique_cols == ['unique_col']
+        assert transformer.unique_cols == ["unique_col"]
 
     def test_transform(self, X: pd.DataFrame):
         # create the transformer
@@ -58,4 +58,4 @@ class TestDropUniqueColumnTransformer:
 
         # assert
         assert isinstance(X_, pd.DataFrame)
-        assert 'unique_col' not in X_.columns
+        assert "unique_col" not in X_.columns

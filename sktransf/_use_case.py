@@ -19,17 +19,17 @@ def use_case() -> GridSearchCV:
     # pipeline
     pipeline = Pipeline(
         [
-            ('imputer', SimpleImputer()),
-            ('logger', LogTransformer()),
-            ('scaler', StandardScaler()),
-            ('estimator', LogisticRegression()),
+            ("imputer", SimpleImputer()),
+            ("logger", LogTransformer()),
+            ("scaler", StandardScaler()),
+            ("estimator", LogisticRegression()),
         ]
     )
 
     # param grid
     param_grid = {
-        'logger__threshold': [1, 1.5, 3],
-        'scaler': [StandardScaler(), 'passthrough'],
+        "logger__threshold": [1, 1.5, 3],
+        "scaler": [StandardScaler(), "passthrough"],
     }
 
     # grid

@@ -1,4 +1,4 @@
-__version__ = '0.1.1'
+__version__ = "0.1.1"
 
 __doc__ = """
 Basic package to enable usefull transformers in scikit-learn pipelines.
@@ -19,8 +19,8 @@ class utils:
 
 
 __all__ = [
-    'DropUniqueColumnTransformer',
-    'BoolColumnTransformer',
-    'LogTransformer',
-    'utils',
+    "DropUniqueColumnTransformer",
+    "BoolColumnTransformer",
+    "LogTransformer",
+    "utils",
 ]

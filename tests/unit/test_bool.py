@@ -11,7 +11,7 @@ def X() -> pd.DataFrame:
 
     X, _ = X_y = get_titanic()
 
-    X['bool_col'] = np.random.choice(['a', 'b'], size=X.shape[0])
+    X["bool_col"] = np.random.choice(["a", "b"], size=X.shape[0])
 
     return X
 
@@ -43,7 +43,7 @@ class TestBoolColumnTransformer:
         # fit the transformer
         transformer.fit(X)
 
-        assert transformer.bool_cols == ['bool_col']
+        assert transformer.bool_cols == ["bool_col"]
 
     def test_transform(self, X: pd.DataFrame):
         """Test the transform method"""

@@ -43,7 +43,7 @@ class TestLogTransformer:
         #     "Fare": 4.79,
         # }
 
-        assert transformer._log_cols == ['SibSp', 'Fare']
+        assert transformer._log_cols == ["SibSp", "Fare"]
 
     def test_transform_3(self, X: pd.DataFrame):
         """Test the transform method"""
@@ -54,7 +54,7 @@ class TestLogTransformer:
         # fit the transformer
         transformer.fit(X)
 
-        assert transformer._log_cols == ['SibSp', 'Fare']
+        assert transformer._log_cols == ["SibSp", "Fare"]
 
         # transform
         X_ = transformer.transform(X)
@@ -66,7 +66,7 @@ class TestLogTransformer:
         assert X_.Pclass.values.tolist() == X.Pclass.values.tolist()
 
     @pytest.mark.parametrize(
-        'threshold,cols', [(0, ['Age', 'Fare', 'Parch', 'SibSp']), (100, [])]
+        "threshold,cols", [(0, ["Age", "Fare", "Parch", "SibSp"]), (100, [])]
     )
     def test_treshold(self, X: pd.DataFrame, threshold: int, cols: list):
         """Test the threshold attribute"""
@@ -86,7 +86,7 @@ class TestLogTransformer:
         X_ = transformer.transform(X)
 
     @pytest.mark.parametrize(
-        'force_df_out,_type',
+        "force_df_out,_type",
         [
             (True, pd.DataFrame),
             (False, np.ndarray),

@@ -26,10 +26,10 @@ class LogTransformer(BaseEstimator, TransformerMixin):
         """Initialize the transformer"""
 
         if not isinstance(threshold, (float, int)):
-            raise TypeError('threshold must be a float or an integer')
+            raise TypeError("threshold must be a float or an integer")
 
         if not isinstance(force_df_out, (int, bool)):
-            raise TypeError('out must be a boolean')
+            raise TypeError("out must be a boolean")
 
         self.force_df_out = force_df_out
         self.threshold = threshold
@@ -48,12 +48,12 @@ class LogTransformer(BaseEstimator, TransformerMixin):
         """
 
         if not isinstance(X, (pd.DataFrame, np.ndarray, list)):
-            raise TypeError('X must be a (pd.DataFrame, np.ndarray, list)')
+            raise TypeError("X must be a (pd.DataFrame, np.ndarray, list)")
 
         try:
             _X = pd.DataFrame(X).copy()
         except Exception as e:
-            raise Exception(f'Impossible to make df/np.array : {e}')
+            raise Exception(f"Impossible to make df/np.array : {e}")
 
         skew = _X.skew().round(4).to_dict()
 
@@ -81,12 +81,12 @@ class LogTransformer(BaseEstimator, TransformerMixin):
         """
 
         if not isinstance(X, (pd.DataFrame, np.ndarray, list)):
-            raise TypeError('X must be a (pd.DataFrame, np.ndarray, list)')
+            raise TypeError("X must be a (pd.DataFrame, np.ndarray, list)")
 
         try:
             _X = pd.DataFrame(X).copy()
         except Exception as e:
-            raise Exception(f'Impossible to make df/np.array : {e}')
+            raise Exception(f"Impossible to make df/np.array : {e}")
 
         for col in self._log_cols:
             _X[col] = np.log1p(_X[col])

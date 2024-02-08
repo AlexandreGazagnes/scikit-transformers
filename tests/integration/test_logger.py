@@ -21,10 +21,10 @@ def pipeline():
 
     pipeline = Pipeline(
         [
-            ('imputer', SimpleImputer()),
-            ('logger', LogTransformer()),
-            ('scaler', StandardScaler()),
-            ('estimator', LogisticRegression()),
+            ("imputer", SimpleImputer()),
+            ("logger", LogTransformer()),
+            ("scaler", StandardScaler()),
+            ("estimator", LogisticRegression()),
         ]
     )
 
@@ -38,8 +38,8 @@ class TestLogTransformer:
         """Test the integration of the package"""
 
         param_grid = {
-            'logger__threshold': [1, 1.5, 3],
-            'scaler': [StandardScaler(), 'passthrough'],
+            "logger__threshold": [1, 1.5, 3],
+            "scaler": [StandardScaler(), "passthrough"],
         }
 
         grid = GridSearchCV(

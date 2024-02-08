@@ -1,8 +1,15 @@
 ![image](./.assets/img.png)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Python](https://img.shields.io/badge/python-3.10.x-green.svg)
+![Repo Size](https://img.shields.io/github/repo-size/AlexandreGazagnes/scikit-transformers)
+[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
+![Coverage](.assets/cov.svg)
+![CI](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/ci.yaml/badge.svg)
+![statics](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/statics.yaml/badge.svg)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/AlexandreGazagnes/scikit-transformers)
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  ![Python](https://img.shields.io/badge/python-3.10.x-green.svg) ![Repo Size](https://img.shields.io/github/repo-size/Sulstice/global-chem)  [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/) [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/) ![Coverage](./.assets/cov.svg) ![CI](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/ci.yaml/badge.svg) ![statics](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/statics.yaml/badge.svg)
-
-# Scikit-transformers : Scikit-learn + transformers
+# Scikit-transformers : Scikit-learn + Transformers
 
 ## About
 
@@ -12,7 +19,7 @@ First transformer implemented is a LogTransformer, which is a simple wrapper aro
 
 ## Installation
 
-Using regular pip and venv tools : 
+Using regular pip and venv tools :
 
 ```bash
 python3 -m venv .venv
@@ -23,7 +30,7 @@ pip install scikit-transformers
 
 ## Usage
 
-For a very basic usage : 
+For a very basic usage :
 
 ```python
 import pandas as pd
@@ -31,7 +38,7 @@ import pandas as pd
 from sktransf import LogTransformer
 
 df = pd.DataFrame(
-    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 
+    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       "b": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     }
 )
@@ -54,7 +61,7 @@ A complete documentation will be soon available [here](https://alexandregazagnes
 
 ## Contributing
 
-Pull requests are welcome. 
+Pull requests are welcome.
 
 For major changes, please open an issue first to discuss what you would like to change.
 
