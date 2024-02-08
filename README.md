@@ -34,8 +34,6 @@ pip install scikit-transformers
 
 ## Usage
 
-### Most basic usage
-
 For a very basic usage :
 ```python
 import pandas as pd
@@ -53,7 +51,7 @@ logger.fit_transform(df)
 df_transf = logger.transform(df)
 ```
 
-### Using common transformers
+Using common transformers : 
 
 ```python
 import pandas as pd
@@ -71,7 +69,7 @@ df_unique = DropUniqueColumnTransformer().fit_transform(df)
 df_logged = LogTransformer().fit_transform(df)
 ```
 
-### Using a pipeline
+Using a pipeline : 
 
 ```python
 
@@ -95,7 +93,7 @@ df = pd.DataFrame(
 df_transf = pipe.fit_transform(df)
 ```
 
-### Using a pipeline with a scikit-learn model
+Using a pipeline with a scikit-learn model : 
 
 ```python
 import pandas as pd
@@ -127,18 +125,23 @@ y_pred = pipe.predict(X)
 
 ## Documentation
 
-For generic use case, please refer to this [notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/simple_example.ipynb).
+For more specific information, please refer to the notebooks: 
+- [Pipelines notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/Pipelines.ipynb)
+- [BoolColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/BoolColumnTransformer.ipynb)
+- [DropUniqueColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/DropUniqueColumnTransformer.ipynb)
+- [LogColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/LogColumnTransformer.ipynb)
+
 
 <!-- For more specific use case, please refer to this [notebook](docs/detailed_example.ipynb). -->
 
 <!-- For more detailed information, please refer to the [documentation](https://alexandregazagnes.github.io/scikit-transformers/). -->
 
-A complete documentation will be soon available on the  [github page](https://alexandregazagnes.github.io/scikit-transformers/).
+A complete documentation is be available on the  [github page](https://alexandregazagnes.github.io/scikit-transformers/).
 
 
 ## Changelog, Releases and Roadmap
 
-Please refer to the [changelog](https://alexandregazagnes.github.io/scikit-transformers/CHANGELOG/) file for more information.
+Please refer to the [changelog](https://alexandregazagnes.github.io/scikit-transformers/CHANGELOG/) page for more information.
 
 
 ## Contributing
@@ -147,7 +150,7 @@ Pull requests are welcome.
 
 For major changes, please open an issue first to discuss what you would like to change.
 
-For more information, please refer to the [contributing](https://alexandregazagnes.github.io/scikit-transformers/CONTRIBUTING/) file.
+For more information, please refer to the [contributing](https://alexandregazagnes.github.io/scikit-transformers/CONTRIBUTING/) page.
 
 
 ## License

@@ -1,3 +1,6 @@
+import pytest
+
+import numpy as np
 import pandas as pd
 
 from sktransf import BoolColumnTransformer
@@ -17,7 +20,7 @@ class TestBoolColumnTransformer:
         """Test the init method"""
 
         # create the transformer
-        transformer = BoolColumnTransformer()
+        transformer = BoolColumnTransformer(force_df_out=True)
 
         assert transformer.bool_cols is None
 
@@ -25,7 +28,7 @@ class TestBoolColumnTransformer:
         """Test the fit method"""
 
         # create the transformer
-        transformer = BoolColumnTransformer()
+        transformer = BoolColumnTransformer(force_df_out=True)
 
         # fit the transformer
         transformer.fit(X_bool)
@@ -36,7 +39,7 @@ class TestBoolColumnTransformer:
         """Test the transform method"""
 
         # create the transformer
-        transformer = BoolColumnTransformer()
+        transformer = BoolColumnTransformer(force_df_out=True)
 
         # fit the transformer
         transformer.fit(X_bool)
@@ -48,3 +51,28 @@ class TestBoolColumnTransformer:
         assert X_bool_.bool_col.nunique() == 2
         vals = X_bool_.bool_col.unique().tolist()
         assert sorted(vals) == [0, 1]
+
+    @pytest.mark.parametrize(
+        "force_df_out,_type",
+        [
+            (True, pd.DataFrame),
+            (False, np.ndarray),
+        ],
+    )
+    def test_force_df_out(
+        self,
+        X: pd.DataFrame,
+        force_df_out: bool,
+        _type: None,
+    ):
+        """Test the force_df_out attribute"""
+
+        # create the transformer
+        transformer = BoolColumnTransformer(force_df_out=force_df_out)
+
+        # fit the transformer
+        transformer.fit(X)
+        X_ = transformer.transform(X)
+
+        # type  check
+        assert isinstance(X_, _type)

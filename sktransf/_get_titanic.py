@@ -4,6 +4,8 @@ Utils get_titanic
 
 import pandas as pd
 
+pd.set_option("future.no_silent_downcasting", True)
+
 
 def get_titanic() -> tuple[pd.DataFrame, pd.Series]:
     """Get titanic dataset from github gist"""

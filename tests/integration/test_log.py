@@ -1,17 +1,12 @@
 import pytest
+
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from sktransf import LogTransformer
-
-# @pytest.fixture
-# def X_y() -> tuple:
-#     """Load the data"""
-
-#     return get_titanic()
+from sktransf import LogColumnTransformer
 
 
 @pytest.fixture
@@ -21,7 +16,7 @@ def pipeline():
     pipeline = Pipeline(
         [
             ("imputer", SimpleImputer()),
-            ("logger", LogTransformer()),
+            ("logger", LogColumnTransformer()),
             ("scaler", StandardScaler()),
             ("estimator", LogisticRegression()),
         ]
@@ -30,7 +25,7 @@ def pipeline():
     return pipeline
 
 
-class TestLogTransformer:
+class TestLogColumnTransformer:
     """Test class for skres package"""
 
     def test_integration(self, X_y: tuple, pipeline: Pipeline):

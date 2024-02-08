@@ -1,4 +1,4 @@
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 __doc__ = """
 Basic package to enable usefull transformers in scikit-learn pipelines.
@@ -10,8 +10,8 @@ around the numpy log function.
 from ._get_titanic import get_titanic
 from ._use_case import use_case
 from .bool import BoolColumnTransformer
-from .drop_unique import DropUniqueColumnTransformer
-from .logger import LogTransformer
+from .unique import DropUniqueColumnTransformer
+from .log import LogColumnTransformer
 
 
 class utils:
@@ -22,6 +22,6 @@ class utils:
 __all__ = [
     "DropUniqueColumnTransformer",
     "BoolColumnTransformer",
-    "LogTransformer",
+    "LogColumnTransformer",
     "utils",
 ]

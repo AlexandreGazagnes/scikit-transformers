@@ -2,17 +2,17 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from sktransf import LogTransformer
+from sktransf import LogColumnTransformer
 
 
-class TestLogTransformer:
-    """Test for LogTransformer"""
+class TestLogColumnTransformer:
+    """Test for LogColumnTransformer"""
 
     def test_init(self):
         """Test the init method"""
 
         # create the transformer
-        transformer = LogTransformer()
+        transformer = LogColumnTransformer()
 
         assert transformer.threshold == 3
         assert transformer.force_df_out is False
@@ -21,7 +21,7 @@ class TestLogTransformer:
         """Test the fit method"""
 
         # create the transformer
-        transformer = LogTransformer()
+        transformer = LogColumnTransformer()
 
         # fit the transformer
         transformer.fit(X)
@@ -40,7 +40,7 @@ class TestLogTransformer:
         """Test the transform method"""
 
         # create the transformer
-        transformer = LogTransformer(force_df_out=True)
+        transformer = LogColumnTransformer(force_df_out=True)
 
         # fit the transformer
         transformer.fit(X)
@@ -63,7 +63,7 @@ class TestLogTransformer:
         """Test the threshold attribute"""
 
         # create the transformer
-        transformer = LogTransformer(
+        transformer = LogColumnTransformer(
             force_df_out=False,
             threshold=threshold,
         )
@@ -92,7 +92,7 @@ class TestLogTransformer:
         """Test the force_df_out attribute"""
 
         # create the transformer
-        transformer = LogTransformer(force_df_out=force_df_out)
+        transformer = LogColumnTransformer(force_df_out=force_df_out)
 
         # fit the transformer
         transformer.fit(X)
