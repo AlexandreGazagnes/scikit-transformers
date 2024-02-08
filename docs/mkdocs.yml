@@ -1,6 +1,35 @@
 site_name: Sickit-Transformers
+
+site_description: Scikit transformers is no more Scikit-learn + Custom Transformers
+
 theme: readthedocs
+
 site_url: https://alexandregazagnes.github.io/scikit-transformers/
+repo_name: 'AlexandreGazagnes/scikit-transformers'
+repo_url: 'https://github.com/AlexandreGazagnes/scikit-transformers'
+edit_uri: 'edit/master/docs/docs'
+
+extra:
+  repo_icon: 'github'
+
+
 nav:
   - Home: index.md
-  - About: about.md
+  # - About: about.md
+  - Installation : installation.md
+  - Usage : usage.md
+  - API Reference : api-reference.md
+  - Contributing : CONTRIBUTING.md
+  - Changelog : CHANGELOG.md
+  # - Releases : releases.md
+  # - Troubleshooting : troubleshooting.md
+
+
+# markdown_extensions:
+#   - pymdownx.highlight:
+#       anchor_linenums: true
+#   - admonition
+#   - pymdownx.details
+#   - pymdownx.inlinehilite
+#   - pymdownx.snippets
+#   - pymdownx.superfences

@@ -6,12 +6,14 @@
   (possibly not a complete list)
   - git (Version 2.24.0 or above is required )
   - python3.10.x (Required by a test which checks different python versions)
-  - tox (or venv)
-  - poetry, pip, pipeenv, virtualenv, or similar
+  <!-- - tox (or venv) -->
+  - poetry, pip, pipenv, virtualenv, or similar
+  - poetry is the preferred tool for managing dependencies, highly recommended
 
 ### Setting up an environment
 
-The project uses [Poetry](https://python-poetry.org/) to manage its dependencies. Please install it using the following command :
+The project uses [Poetry](https://python-poetry.org/) to manage its dependencies.
+Please install it using the following command :
 
 ```bash
 pip install poetry
@@ -22,6 +24,19 @@ Then, please install the dependencies using the following command :
 ```bash
 poetry install
 ```
+
+Activate the environment using the following command :
+
+```bash
+poetry shell
+```
+
+And finally, install the pre-commit hooks using the following command :
+
+```bash
+pre-commit install
+```
+
 
 ### Running a specific test
 
@@ -51,3 +66,4 @@ A complete documentation will be soon available [here](https://alexandregazagnes
 Best way to contribute is to open an issue and discuss about it.
 
 Feel free to fork the project and make a pull request.
+In such case, please make sure to follow the [contribution guidelines](./docs/docs/CONTRIBUTING.md).
