@@ -152,4 +152,4 @@ For more information, please refer to the [contributing](https://alexandregazagn
 
 ## License
 
-[GPLv3](LICENSE)
+[GPLv3](https://raw.githubusercontent.com/AlexandreGazagnes/scikit-transformers/main/LICENSE)
