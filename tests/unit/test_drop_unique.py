@@ -1,13 +1,11 @@
-import logging
-import random
+"""
+Unique Bool transformer
+"""
 
+import pandas as pd
 import pytest
 
-import numpy as np
-import pandas as pd
-
-from sktransf import DropUniqueColumnTransformer
-from sktransf import get_titanic
+from sktransf import DropUniqueColumnTransformer, get_titanic
 
 
 @pytest.fixture
@@ -16,7 +14,7 @@ def X() -> pd.DataFrame:
 
     X, _ = X_y = get_titanic()
 
-    X["unique_col"] = "hello"
+    X['unique_col'] = 'hello'
 
     return X
 
@@ -31,18 +29,24 @@ class TestDropUniqueColumnTransformer:
 
         assert X.unique_col.nunique() == 1
 
-    def test_fit(self, X: pd.DataFrame):
+    def test_init(self):
+        """Test the init method"""
 
+        # create the transformer
+        transformer = DropUniqueColumnTransformer()
+
+        assert transformer.unique_cols is None
+
+    def test_fit(self, X: pd.DataFrame):
         # create the transformer
         transformer = DropUniqueColumnTransformer()
 
         # fit the transformer
         transformer.fit(X)
 
-        assert transformer.unique_cols == ["unique_col"]
+        assert transformer.unique_cols == ['unique_col']
 
     def test_transform(self, X: pd.DataFrame):
-
         # create the transformer
         transformer = DropUniqueColumnTransformer()
 
@@ -52,4 +56,6 @@ class TestDropUniqueColumnTransformer:
         # transform
         X_ = transformer.transform(X)
 
-        assert "unique_col" not in X_.columns
+        # assert
+        assert isinstance(X_, pd.DataFrame)
+        assert 'unique_col' not in X_.columns

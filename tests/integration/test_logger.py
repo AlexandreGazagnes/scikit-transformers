@@ -1,19 +1,11 @@
 import pytest
-
-import numpy as np
-import pandas as pd
-
-from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
-from sklearn.model_selection import GridSearchCV
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.impute import KNNImputer, SimpleImputer
 
-from sktransf import LogTransformer
-from sktransf import get_titanic
+from sktransf import LogTransformer, get_titanic
 
 
 @pytest.fixture
@@ -29,10 +21,10 @@ def pipeline():
 
     pipeline = Pipeline(
         [
-            ("imputer", SimpleImputer()),
-            ("logger", LogTransformer()),
-            ("scaler", StandardScaler()),
-            ("estimator", LogisticRegression()),
+            ('imputer', SimpleImputer()),
+            ('logger', LogTransformer()),
+            ('scaler', StandardScaler()),
+            ('estimator', LogisticRegression()),
         ]
     )
 
@@ -46,8 +38,8 @@ class TestLogTransformer:
         """Test the integration of the package"""
 
         param_grid = {
-            "logger__threshold": [1, 1.5, 3],
-            "scaler": [StandardScaler(), "passthrough"],
+            'logger__threshold': [1, 1.5, 3],
+            'scaler': [StandardScaler(), 'passthrough'],
         }
 
         grid = GridSearchCV(
