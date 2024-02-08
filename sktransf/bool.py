@@ -60,7 +60,7 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
 
         for col in self.bool_cols:
             # check if column exists
-            if not col in _X.columns:
+            if col not in _X.columns:
                 continue
 
             # find values

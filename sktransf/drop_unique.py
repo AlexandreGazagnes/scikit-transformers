@@ -12,7 +12,8 @@ class DropUniqueColumnTransformer(BaseEstimator, TransformerMixin):
 
     Agrs :
         Optional :
-            - unique_cols : List[str] | None : list of columns to drop if they have only one unique value
+            - unique_cols : List[str] | None : list of columns to drop if
+            they have only one unique value
             default : None => will be found during fit
     """
 
