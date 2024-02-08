@@ -20,10 +20,12 @@ class DropUniqueColumnTransformer(BaseEstimator, TransformerMixin):
     def __init__(
         self,
         unique_cols: list[str] | None = None,
+        force_df_out: bool = False,
     ) -> None:
         """Init method"""
 
         self.unique_cols = unique_cols
+        self.force_df_out = force_df_out
 
     def fit(
         self,
@@ -64,4 +66,7 @@ class DropUniqueColumnTransformer(BaseEstimator, TransformerMixin):
         # drop it
         _X = _X.drop(columns=self.unique_cols, errors="ignore")
 
-        return _X
+        if self.force_df_out:
+            return pd.DataFrame(_X)
+
+        return _X.values

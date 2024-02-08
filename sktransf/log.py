@@ -7,7 +7,7 @@ import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
-class LogTransformer(BaseEstimator, TransformerMixin):
+class LogColumnTransformer(BaseEstimator, TransformerMixin):
     """Logarithm transformer
 
     Opt args:

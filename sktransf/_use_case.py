@@ -8,7 +8,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from sktransf.logger import LogTransformer
+from sktransf.log import LogColumnTransformer
 
 from ._get_titanic import get_titanic
 
@@ -20,7 +20,7 @@ def use_case() -> GridSearchCV:
     pipeline = Pipeline(
         [
             ("imputer", SimpleImputer()),
-            ("logger", LogTransformer()),
+            ("logger", LogColumnTransformer()),
             ("scaler", StandardScaler()),
             ("estimator", LogisticRegression()),
         ]
