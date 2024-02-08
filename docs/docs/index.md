@@ -1,65 +1,159 @@
 # Welcome to Scikit-Transformers
 
+![image](./.assets/img.png)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Python](https://img.shields.io/badge/python-3.10.x-green.svg)
+![Repo Size](https://img.shields.io/github/repo-size/AlexandreGazagnes/scikit-transformers)
+[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
+![Coverage](.assets/cov.svg)
+![CI](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/ci.yaml/badge.svg)
+![statics](https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/statics.yaml/badge.svg)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/AlexandreGazagnes/scikit-transformers)
+
 
 ## About
 
-Lorem markdownum iaculatur illa cetera moveri vitiatas et [tempore posse
-quam](http://achaemenide-sternit.org/color.aspx): tum [tutum
-incautum](http://www.suspiratibus.net/). Forma quae contigit puer, nec musta
-quid dixere se fulmina vultus minantia mutavit Castore Phoci argumentum
-pervenientia totque. Effodiuntur vides ego pudori flammas quamvis contendere
-accepto.
+Basic package to enable usefull transformers in scikit-learn pipelines.
 
-## Is regna Dianae spernimus Iuppiter vittis
+First transformer implemented is a LogTransformer, which is a simple wrapper around the numpy log function.
 
-E numinis simili. Puta deformia officio, **nec Tonantis** abit, est in siccare
-effuge; fidumque quae inops. Neptunius alas, non data reliquit Hymen Aeacides
-corpore succutiturque tuos [terras](http://bello-mihi.com/illic.php) gelidae
-Ianigenam undas viribus: coire! Quae territaque me sagitta Daphnes dixerat, et
-ossa, saucia ira et gaudia mens repetemus.
+## Installation
 
-    if (ddr(process)) {
-        cpl_system_point.icon_data_and.pppUdp(3, gnuSpyware + netDfsInput,
-                layout_p_media);
+Using regular pip and venv tools :
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install scikit-transformers
+
+```
+
+## Usage
+
+
+### Most basic usage
+
+For a very basic usage :
+```python
+import pandas as pd
+
+from sktransf import LogTransformer
+
+df = pd.DataFrame(
+    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "b": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     }
-    ppc_development += cache(-5);
-    if (esports_backside_baseband(markup(sprite, pc_dbms_gif + 20))) {
-        opacityMidi(cursor(icon, nullPower, commerce_mca_ppm), 3);
-        boot_cell = monitor(42, thickHandle, dhcpWaisSpoofing);
-        tabletRam.downloadNewsgroup = hddPeoplewareBaseband(undoVariable - -5);
+)
+
+    logger = LogTransformer()
+    logger.fit_transform(df)
+    df_transf = logger.transform(df)
+```
+
+
+### Using common transformers
+
+```python
+import pandas as pd
+
+from sktransf import LogTransformer, DropUniqueColumnTransformer, BoolColumnTransformer
+
+df = pd.DataFrame(
+    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "b": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     }
-    active(dongle_mnemonic_adsl, compatible_home, cmyk_vlb);
+)
 
-## Inmunis te inminet ardua
+    df_bool = BoolColumnTransformer().fit_transform(df)
+    df_unique = DropUniqueColumnTransformer().fit_transform(df)
+    df_logged = LogTransformer().fit_transform(df)
 
-**Totaeque succincta** illic superiniecit spolium quae caput, et cicuta lavere
-Phoebus et lingua victa manet, [aegro](http://www.nullus-inertem.org/). Nurusque
-sagittis **officiique**, atque longus, equi ipso adspexit furor Ereboque: Atlas
-seu agmen lentosque mihi. Talia sordida non posita cecidere cervice. Nullae
-praecipites plantis mixta, belua alternare hactenus sono arida.
+```
 
-- Penetralia elisa cana aede
-- Habitantque viribus iugulum
-- Matutinaeque ille radiantibus atria Clytiumque fugias
-- Flammamque deserit omnia
-- Licet memini versum
+### Using a pipeline
 
-## Pectusque pectora
+```python
 
-Ut tamen sequentis lacertos o Phoebi, *Caphereus condidit dedissent* in vertit.
-Tumidam nec annis **ceris**; duos turba: valet
-[Cinyran](http://meliore-excitat.io/) dextris pervius inamoenaque *proximus
-longo*, augere. [Per servanda](http://senilibusreplet.io/), ab robora nomina
-teneros secundi tu volucres quarum fluctus, recepto! Sceleratior generis subit
-et fortuna atque motis Hymenaeon breve amplectique, se e rerum moderatus iubet.
+import pandas as pd
+from sklearn.pipeline import Pipeline
 
-> Graium fata mugit deprendere respexit tamen saxo mundi siquid: trado. Per non
-> lacteus per avenis secutum [collum manu descendit](http://corpore.com/qui)
-> calcare ait. Mixta sine, pudibundaque addere arserunt nereides, qui fata
-> saxea, calidusque ut dicta nempe Philoctete.
+from sktransf import LogTransformer, DropUniqueColumnTransformer, BoolColumnTransformer
 
-Vestigia rediret, aura ambit fronte [et foret](http://lacertis.com/recludam),
-non haec non de solet. Solum aureus. Adsternunturque solvit in reddere captus,
-mare at deformia iuncta illo. Iacens primum [et](http://tuos.io/quam), toto
-Pyraethi, ope viri est luctuque inmensum Mycenae grandaevumque! Succeditis quo
-foedantem oculis ulterius Circen, semine, coloni!
+
+pipe = Pipeline([
+    ('bool', BoolColumnTransformer()),
+    ('unique', DropUniqueColumnTransformer()),
+    ('log', LogTransformer())
+])
+
+
+
+df = pd.DataFrame(
+    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "b": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+)
+
+df_transf = pipe.fit_transform(df)
+
+```
+
+### Using a pipeline with a scikit-learn model
+
+```python
+import pandas as pd
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LinearRegression
+
+from sktransf import LogTransformer, DropUniqueColumnTransformer, BoolColumnTransformer
+
+pipe = Pipeline([
+    ('bool', BoolColumnTransformer()),
+    ('unique', DropUniqueColumnTransformer()),
+    ('log', LogTransformer()),
+    ('model', LinearRegression())
+])
+
+X = pd.DataFrame(
+    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "b": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+)
+
+y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+pipe.fit(X, y)
+
+y_pred = pipe.predict(X)
+
+```
+
+
+## Documentation
+
+For generic use case, please refer to this [notebook](docs/simple_example.ipynb).
+
+<!-- For more specific use case, please refer to this [notebook](docs/detailed_example.ipynb). -->
+
+<!-- For more detailed information, please refer to the [documentation](https://alexandregazagnes.github.io/scikit-transformers/). -->
+
+A complete documentation will be soon available on the  [github page](https://alexandregazagnes.github.io/scikit-transformers/).
+
+
+## Changelog, Releases and Roadmap
+
+Please refer to the [changelog](./docs/docs/CHANGELOG.md) file for more information.
+
+
+## Contributing
+
+Pull requests are welcome.
+
+For major changes, please open an issue first to discuss what you would like to change.
+
+For more information, please refer to the [contributing](./docs/docs/CONTRIBUTING.md) file.
+
+## License
+
+[GPLv3](LICENSE)

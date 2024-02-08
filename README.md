@@ -30,8 +30,10 @@ pip install scikit-transformers
 
 ## Usage
 
-For a very basic usage :
 
+### Most basic usage
+
+For a very basic usage :
 ```python
 import pandas as pd
 
@@ -48,6 +50,85 @@ df = pd.DataFrame(
     df_transf = logger.transform(df)
 ```
 
+
+### Using common transformers
+
+```python
+import pandas as pd
+
+from sktransf import LogTransformer, DropUniqueColumnTransformer, BoolColumnTransformer
+
+df = pd.DataFrame(
+    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "b": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+)
+
+    df_bool = BoolColumnTransformer().fit_transform(df)
+    df_unique = DropUniqueColumnTransformer().fit_transform(df)
+    df_logged = LogTransformer().fit_transform(df)
+
+```
+
+### Using a pipeline
+
+```python
+
+import pandas as pd
+from sklearn.pipeline import Pipeline
+
+from sktransf import LogTransformer, DropUniqueColumnTransformer, BoolColumnTransformer
+
+
+pipe = Pipeline([
+    ('bool', BoolColumnTransformer()),
+    ('unique', DropUniqueColumnTransformer()),
+    ('log', LogTransformer())
+])
+
+
+
+df = pd.DataFrame(
+    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "b": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+)
+
+df_transf = pipe.fit_transform(df)
+
+```
+
+### Using a pipeline with a scikit-learn model
+
+```python
+import pandas as pd
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LinearRegression
+
+from sktransf import LogTransformer, DropUniqueColumnTransformer, BoolColumnTransformer
+
+pipe = Pipeline([
+    ('bool', BoolColumnTransformer()),
+    ('unique', DropUniqueColumnTransformer()),
+    ('log', LogTransformer()),
+    ('model', LinearRegression())
+])
+
+X = pd.DataFrame(
+    { "a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "b": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+)
+
+y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+pipe.fit(X, y)
+
+y_pred = pipe.predict(X)
+
+```
+
+
 ## Documentation
 
 For generic use case, please refer to this [notebook](docs/simple_example.ipynb).
@@ -59,13 +140,18 @@ For generic use case, please refer to this [notebook](docs/simple_example.ipynb)
 A complete documentation will be soon available on the  [github page](https://alexandregazagnes.github.io/scikit-transformers/).
 
 
+## Changelog, Releases and Roadmap
+
+Please refer to the [changelog](./docs/docs/CHANGELOG.md) file for more information.
+
+
 ## Contributing
 
 Pull requests are welcome.
 
 For major changes, please open an issue first to discuss what you would like to change.
 
-For more information, please refer to the [contributing](CONTRIBUTING.md) file.
+For more information, please refer to the [contributing](./docs/docs/CONTRIBUTING.md) file.
 
 ## License
 
