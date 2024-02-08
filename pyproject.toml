@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "scikit-transformers"
-version = "0.1.1"
+version = "0.2.0"
 description = "Very Basic package make some usefull log transformation for scikit-learn"
 authors = ["AlexandreGazagnes <alex@gazagnes.net>"]
 readme = "README.md"
 packages = [{include = "sktransf"}]
 
 [tool.poetry.dependencies]
-# python = "3.10.12"
-python = "3.11.3"
+python = "3.10.12"
+# python = "3.11.3"
 scikit-learn = ">=1.0.0"
 pandas = ">=1.4.0"
 

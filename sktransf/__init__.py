@@ -1,4 +1,4 @@
-__version__ = "0.1.1"
+__version__ = "0.2.0"
 
 __doc__ = """
 Basic package to enable usefull transformers in scikit-learn pipelines.
