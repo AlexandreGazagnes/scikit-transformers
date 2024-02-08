@@ -12,18 +12,16 @@ edit_uri: 'edit/master/docs/docs'
 extra:
   repo_icon: 'github'
 
-
 nav:
   - Home: index.md
   # - About: about.md
   - Installation : installation.md
   - Usage : usage.md
-  - API Reference : api-reference.md
+  # - API Reference : api-reference.md
   - Contributing : CONTRIBUTING.md
   - Changelog : CHANGELOG.md
   # - Releases : releases.md
   # - Troubleshooting : troubleshooting.md
-
 
 # markdown_extensions:
 #   - pymdownx.highlight:

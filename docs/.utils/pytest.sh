@@ -1,6 +1,5 @@
 #! /bin/sh
 
-
 # .venv/bin/python3 -m pytest .
 rm -f ./docs/assets/img/cov.svg
 rm -f .coverage
