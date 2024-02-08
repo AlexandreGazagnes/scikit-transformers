@@ -1,0 +1,6 @@
+site_name: Sickit-Transformers Documentation
+theme: readthedocs
+site_url: https://example.com/
+nav:
+  - Home: index.md
+  - About: about.md
