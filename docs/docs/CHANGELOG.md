@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 - Add validators 
+- Add Cleaner module 
+- Add StandardScaler
+- Add transformers, validators, and cleaner import 
+- Add validatiors 
 
 ### Updated
 - Moove .utils to root folder
