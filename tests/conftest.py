@@ -21,24 +21,6 @@ def X() -> pd.DataFrame:
     return X
 
 
-# @pytest.fixture
-# def X_sca() -> pd.DataFrame:
-#     """Load the data"""
-
-#     X, _ = X_y = get_titanic(only_num=True)
-
-#     return X
-
-
-# @pytest.fixture
-# def X_sku() -> pd.DataFrame:
-#     """Load the data"""
-
-#     X, _ = X_y = get_titanic()
-
-#     return X
-
-
 @pytest.fixture
 def X_bool() -> pd.DataFrame:
     """Load the data"""
