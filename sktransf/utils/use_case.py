@@ -8,7 +8,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from sktransf.log import LogColumnTransformer
+from sktransf.transformer import LogColumnTransformer
 
 from .get_titanic import get_titanic
 

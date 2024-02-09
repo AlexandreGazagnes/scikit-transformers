@@ -1,10 +1,12 @@
 """
-Logarithm transformer
+LogColumnTransformer
 """
 
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
+
+from ..validators import manage_input, manage_output, manage_negatives
 
 
 pd.set_option("future.no_silent_downcasting", True)
@@ -36,10 +38,14 @@ class LogColumnTransformer(BaseEstimator, TransformerMixin):
 
         self.force_df_out = force_df_out
         self.threshold = threshold
-        self._log_cols = []
-        self._standard_cols = []
+        self._log_cols = None
+        self._standard_cols = None
 
-    def fit(self, X: pd.DataFrame | np.ndarray, y: None = None):
+    def fit(
+        self,
+        X: pd.DataFrame | np.ndarray,
+        y: None = None,
+    ):
         """Fit the transformer (does nothing)
 
         Pos args:
@@ -50,16 +56,17 @@ class LogColumnTransformer(BaseEstimator, TransformerMixin):
                 The target to fit
         """
 
-        if not isinstance(X, (pd.DataFrame, np.ndarray, list)):
-            raise TypeError("X must be a (pd.DataFrame, np.ndarray, list)")
+        _X = manage_input(X)
 
-        try:
-            _X = pd.DataFrame(X).copy()
-        except Exception as e:
-            raise Exception(f"Impossible to make df/np.array : {e}")
+        manage_negatives(_X)
 
-        skew = _X.skew().round(4).to_dict()
+        # compute skew
+        skew = _X.skew().round(3).to_dict()
 
+        self._log_cols = []
+        self._standard_cols = []
+
+        # use threshold
         for col in skew:
             if skew[col] >= self.threshold:
                 self._log_cols.append(col)
@@ -70,7 +77,7 @@ class LogColumnTransformer(BaseEstimator, TransformerMixin):
 
     def transform(
         self,
-        X: pd.DataFrame | np.ndarray,
+        X: pd.DataFrame | np.ndarray | list,
         y: None = None,
     ) -> pd.DataFrame | np.ndarray:
         """Transform the data
@@ -83,18 +90,12 @@ class LogColumnTransformer(BaseEstimator, TransformerMixin):
                 The target to transform
         """
 
-        if not isinstance(X, (pd.DataFrame, np.ndarray, list)):
-            raise TypeError("X must be a (pd.DataFrame, np.ndarray, list)")
-
-        try:
-            _X = pd.DataFrame(X).copy()
-        except Exception as e:
-            raise Exception(f"Impossible to make df/np.array : {e}")
+        _X = manage_input(X)
 
         for col in self._log_cols:
+            if not col in _X.columns:
+                continue
+
             _X[col] = np.log1p(_X[col])
 
-        if self.force_df_out:
-            return pd.DataFrame(_X)
-
-        return _X.values
+        return manage_output(_X, self.force_df_out)

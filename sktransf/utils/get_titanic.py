@@ -21,6 +21,6 @@ def get_titanic(
     X = df.drop(columns="Survived")
 
     if only_num:
-        X = X.iloc[:, 2:].select_dtypes(include="number")
+        X = X.select_dtypes(include="number")
 
     return X, y
