@@ -1,19 +1,59 @@
 [tool.poetry]
 name = "scikit-transformers"
-version = "0.2.1"
-description = "Very Basic package make some usefull log transformation for scikit-learn"
-authors = ["AlexandreGazagnes <alex@gazagnes.net>"]
+version = "0.3.0"
+description = "scikit-transformers is a very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers."
+# dynamic = ["version", "description"]
+license = "GPL-3.0"
+authors = ["AlexandreGazagnes <alex@gazagnes.net>",]
+maintainers = ["AlexandreGazagnes <alex@gazagnes.net>",]
 readme = "README.md"
+
+homepage = "https://alexandregazagnes.github.io/scikit-transformers/"
+repository = "https://github.com/AlexandreGazagnes/scikit-transformers/"
+documentation = "https://alexandregazagnes.github.io/scikit-transformers/"
+
+keywords=["python", "machine learning", "sklearn", "transformers", "scikit-learn", "tools", "data", "pandas"]
+classifiers = [
+    "License :: OSI Approved :: GNU GPLv3 License",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Data Scientists",
+    "Intended Audience :: Data Engineers",
+    "Intended Audience :: Data Analysts",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Data/Engineering",
+
+]
+
 packages = [{include = "sktransf"}]
-urls = { "Code" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main", "Documentation" = "https://alexandregazagnes.github.io/scikit-transformers/", "Repository" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main" }
+include = ["docs/docs/CHANGELOG.md", "LICENCE"]
+
+
+[tool.poetry.urls]
+"Homepage" = "https://alexandregazagnes.github.io/scikit-transformers/"
+"Documentation" = "https://alexandregazagnes.github.io/scikit-transformers/"
+"Repository" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main"
+"Code" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main"
+"Issues" = "https://github.com/AlexandreGazagnes/scikit-transformers/issues"
+"Changelog" = "https://alexandregazagnes.github.io/scikit-transformers/CHANGELOG/"
+
 
 [tool.poetry.dependencies]
-python = "3.10.12"
-# python = "3.11.3"
+python = ">=3.6"
 scikit-learn = ">=1.0.0"
 pandas = ">=1.4.0"
 
+
 [tool.poetry.group.dev.dependencies]
+python = "3.10.12"
+black = "^23.10.1"
+ipython = "^8.18.1"
+pre-commit = "^3.6.0"
+
+
+[tool.poetry.group.notebook.dependencies]
 jupyter = "^1.0.0"
 notebook = "^7.0.6"
 jupyterlab = "^4.0.10"
@@ -22,13 +62,8 @@ jupytext = "^1.16.1"
 ipywidgets = "^8.1.1"
 jupyter-contrib-nbextensions = "^0.7.0"
 nbconvert = "7.14.1"
-black = {extras = ["jupyter"], version = "^23.10.1"}
-ipython = "^8.18.1"
 seaborn = "^0.13.2"
-pre-commit = "^3.6.0"
 
-[tool.poetry.group.docs.dependencies]
-mkdocs = "^1.5.3"
 
 [tool.poetry.group.qa.dependencies]
 black = {extras = ["jupyter"], version = "^23.10.1"}
@@ -47,16 +82,24 @@ pyupgrade = "^3.15.0"
 safety = "^3.0.1"
 # coverage = "^7.3.2"
 
+
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.3"
 coverage = "^7.4.1"
 coverage-badge = "^1.1.0"
 
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+
+
 [tool.black]
 line-length = 79
 
+
 [tool.pycln]
 all = true
+
 
 [tool.isort]
 line_length = 79
@@ -65,6 +108,7 @@ include_trailing_comma = true
 force_grid_wrap = 0
 use_parentheses = true
 ensure_newline_before_comments = true
+
 
 [tool.pytest.ini_options]
 # addopts = ["--cov=sktransf", "--cov-report=term-missing", "--cov-report=xml", "--cov-report=html", "--cov-fail-under=100"]
@@ -79,10 +123,12 @@ filterwarnings= [
     # 'ignore:function ham\(\) is deprecated:DeprecationWarning',
 ]
 
+
 # [tool.mypy]
 # show_error_codes = true
 # ignore_missing_imports = true
 # no_strict_optional = true
+
 
 [tool.vulture]
 exclude = ["*file*.py", "dir/"]
@@ -94,8 +140,10 @@ paths = ["tests/", "sktransf/"]
 sort_by_size = true
 verbose = true
 
+
 [tool.coverage.run]
 disable_warnings = ["no-data-collected"]
+
 
 [build-system]
 requires = ["poetry-core"]
