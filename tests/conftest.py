@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from sktransf._get_titanic import get_titanic
+from sktransf.utils import get_titanic
 
 
 @pytest.fixture
