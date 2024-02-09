@@ -16,9 +16,19 @@
 
 ## About
 
-Basic package to enable usefull transformers in scikit-learn pipelines.
+Very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers.
 
-First transformer implemented is a LogTransformer, which is a simple wrapper around the numpy log function.
+It was created to provide a simple way to use custom transformers in scikit-learn pipelines, and allow to use them in a scikit-learn model, using GridSearchCV for testing and tuning hyperparameters.
+
+The starting point was to provide a simple LogColumnTransformer, which is a simple wrapper around the numpy log function, making possible to use a skew threshold to apply the log transformation only on columns with a skew superior to a given threshold inside a GridSearchCV.
+
+More ideas behind the wood were : 
+* It could be very usefull to have a package that provide custom transformers for scikit-learn pipelines. 
+* These transformers could be very usefull to clean, encode or transform data before feeding it to a model. 
+* These transformers could be  used in a scikit-learn pipeline, and could be used in a scikit-learn model, using GridSearchCV for testing and tuning hyperparameters.
+
+This package is a first step in this direction.
+
 
 
 ## Installation
