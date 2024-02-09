@@ -2,23 +2,28 @@
 BoolColumnTransformer
 """
 
+
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from ..validators import manage_input, manage_nan, manage_output
+from ..validators import (
+    Bool,
+    Number,
+    manage_columns,
+    manage_input,
+    manage_nan,
+    manage_output,
+)
 
 pd.set_option("future.no_silent_downcasting", True)
 
 
 class BoolColumnTransformer(BaseEstimator, TransformerMixin):
-    """Boleanizer for columns with 2 unique values
+    """Boleanizer for columns with 2 unique values"""
 
-    Args :
-        Optional :
-            - bool_cols : List[str] | None : list of columns to booleanize
-            default : None => will be found during fit
-    """
+    ignore_nan = Bool()
+    force_df_out = Bool()
 
     def __init__(
         self,
@@ -31,6 +36,7 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
         self.ignore_nan = ignore_nan
         self.force_df_out = force_df_out
         self._values = None
+        self.fitted_columns = None
 
     def fit(
         self,
@@ -40,6 +46,8 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
         """Fit method"""
 
         _X = manage_input(X)
+        self.fitted_columns = sorted(_X.columns.tolist())
+
         _X = manage_nan(_X, self.ignore_nan)
 
         # find bool cols
@@ -63,9 +71,9 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
         """Transform method"""
 
         _X = manage_input(X)
+        _X = manage_columns(_X, self.fitted_columns)
 
         for col in self._bool_cols:
-            # check if column exists
             if col not in _X.columns:
                 continue
 
@@ -73,6 +81,10 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
             dd = self._values[col]
 
             # TODO : This line will be deprecated in the next version
-            _X[col] = _X[col].replace(dd)
+            _X[col] = _X[col].replace(dd, errors="ignore")
+
+            # Manage errors
+            # example for sex 'm' / 'f' in train df and in test df we have 'other'
+            _X[col] = _X[col].apply(lambda x: x if x in [0, 1] else np.nan)
 
         return manage_output(_X, self.force_df_out)

@@ -2,24 +2,28 @@
 DropUniqueColumnSelector
 """
 
+
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from ..validators import manage_input, manage_nan, manage_output
+from ..validators import (
+    Bool,
+    Number,
+    manage_columns,
+    manage_input,
+    manage_nan,
+    manage_output,
+)
 
 pd.set_option("future.no_silent_downcasting", True)
 
 
 class DropUniqueColumnSelector(BaseEstimator, TransformerMixin):
-    """Drops columns with only one unique value
+    """Drops columns with only one unique value"""
 
-    Agrs :
-        Optional :
-            - unique_cols : List[str] | None : list of columns to drop if
-            they have only one unique value
-            default : None => will be found during fit
-    """
+    ignore_nan = Bool()
+    force_df_out = Bool()
 
     def __init__(
         self,
@@ -31,6 +35,7 @@ class DropUniqueColumnSelector(BaseEstimator, TransformerMixin):
         self._unique_cols = None
         self.ignore_nan = ignore_nan
         self.force_df_out = force_df_out
+        self.fitted_columns = None
 
     def fit(
         self,
@@ -40,6 +45,7 @@ class DropUniqueColumnSelector(BaseEstimator, TransformerMixin):
         """Fit method"""
 
         _X = manage_input(X)
+        self.fitted_columns = sorted(_X.columns.tolist())
 
         _X = manage_nan(_X, self.ignore_nan)
 
@@ -52,12 +58,13 @@ class DropUniqueColumnSelector(BaseEstimator, TransformerMixin):
 
     def transform(
         self,
-        X: pd.DataFrame | np.ndarray,
+        X: pd.DataFrame | np.ndarray | list,
         y=None,
-    ) -> pd.DataFrame:
+    ) -> pd.DataFrame | np.ndarray:
         """Transform method"""
 
         _X = manage_input(X)
+        _X = manage_columns(_X, self.fitted_columns)
 
         # drop it
         _X = _X.drop(columns=self._unique_cols, errors="ignore")
