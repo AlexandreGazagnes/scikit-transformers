@@ -2,7 +2,6 @@
 BaseDataCleaner
 """
 
-
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -80,7 +79,7 @@ class BaseDataCleaner(BaseEstimator, TransformerMixin):
         """Fit method"""
 
         _X = manage_input(X)
-        self.fitted_columns = sorted(_X.columns.tolist())
+        self.fitted_columns = _X.columns.tolist()
 
         _X = manage_nan(_X, self.ignore_nan)
 
@@ -99,7 +98,7 @@ class BaseDataCleaner(BaseEstimator, TransformerMixin):
         """Transform method"""
 
         _X = manage_input(X)
-        _X = manage_columns(_X, self.fitted_columns)
+        # _X = manage_columns(_X, self.fitted_columns)
 
         _X = self.sku.transform(_X).copy()
         _X = self.unique.transform(_X).copy()

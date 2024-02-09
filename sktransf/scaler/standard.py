@@ -2,7 +2,6 @@
 BoolColumnTransformer
 """
 
-
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -47,6 +46,7 @@ class StandardScaler(BaseEstimator, TransformerMixin):
         )
         self.ignore_nan = ignore_nan
         self.force_df_out = force_df_out
+        self.fitted_columns = None
 
     def fit(
         self,
@@ -56,7 +56,7 @@ class StandardScaler(BaseEstimator, TransformerMixin):
         """Fit method"""
 
         _X = manage_input(X)
-        self.fitted_columns = sorted(_X.columns.tolist())
+        self.fitted_columns = _X.columns.tolist()
 
         _X = manage_nan(_X, self.ignore_nan)
 

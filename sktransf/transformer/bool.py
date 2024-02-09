@@ -2,7 +2,6 @@
 BoolColumnTransformer
 """
 
-
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -46,7 +45,7 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
         """Fit method"""
 
         _X = manage_input(X)
-        self.fitted_columns = sorted(_X.columns.tolist())
+        self.fitted_columns = _X.columns.tolist()
 
         _X = manage_nan(_X, self.ignore_nan)
 
@@ -81,7 +80,7 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
             dd = self._values[col]
 
             # TODO : This line will be deprecated in the next version
-            _X[col] = _X[col].replace(dd, errors="ignore")
+            _X[col] = _X[col].replace(dd)
 
             # Manage errors
             # example for sex 'm' / 'f' in train df and in test df we have 'other'

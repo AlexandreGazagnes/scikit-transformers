@@ -87,23 +87,27 @@ def manage_columns(
 ) -> pd.DataFrame:
     """Manage columns drift between fit and transform"""
 
+    _fitted_columns = sorted(fitted_columns)
+
     columns = sorted(_X.columns.tolist())
-    if not columns == fitted_columns:
+    if not columns == _fitted_columns:
         logging.warning(
-            "fColumns in input data are different from fitted columns fit : {fitted_columns} != transform : {columns}"
+            f"Columns in input data are different from fitted columns vs transform data : fit {_fitted_columns} != transform  {columns}"
         )
 
     # drop cols
     drop_cols = [i for i in columns if i not in fitted_columns]
-    _X = _X.drop(columns=drop_cols, errors="ignore")
-    logging.warning(f"Columns dropped: {drop_cols}")
+    if drop_cols:
+        _X = _X.drop(columns=drop_cols, errors="ignore")
+        logging.warning(f"Columns dropped: {drop_cols}")
 
     # create nan cols
     nan_cols = [i for i in fitted_columns if i not in columns]
-    _X.loc[:, nan_cols] = np.nan
-    logging.warning(f"Columns with NaN added: {nan_cols}")
+    if nan_cols:
+        _X.loc[:, nan_cols] = np.nan
+        logging.warning(f"Columns with NaN added: {nan_cols}")
 
-    return _X
+    return _X[fitted_columns]
 
 
 class Validator(ABC):

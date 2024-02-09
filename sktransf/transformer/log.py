@@ -2,7 +2,6 @@
 LogColumnTransformer
 """
 
-
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -57,7 +56,7 @@ class LogColumnTransformer(BaseEstimator, TransformerMixin):
         """Fit method"""
 
         _X = manage_input(X)
-        self.fitted_columns = sorted(_X.columns.tolist())
+        self.fitted_columns = _X.columns.tolist()
 
         manage_negatives(_X)
 
