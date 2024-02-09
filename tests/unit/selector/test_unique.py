@@ -2,10 +2,9 @@
 Unique Bool transformer
 """
 
-import pytest
-
 import numpy as np
 import pandas as pd
+import pytest
 
 from sktransf.selector import DropUniqueColumnSelector
 
