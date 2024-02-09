@@ -1,5 +1,12 @@
 #! /bin/sh
 
+
+# update index.md
+cp README.md ./docs/index.md
+
+# docs
 cd ./docs
-# .venv/bin/python -m mkdocs build
-.venv/bin/python -m mkdocs gh-deploy
+
+# deploy
+mkdocs build
+mkdocs gh-deploy
