@@ -1,5 +1,6 @@
-__version__ = "0.2.1"
-
+__version__ = "0.2.2"
+__description__ = """
+Basic package to enable usefull and custom transformers in scikit-learn pipelines."""
 __doc__ = """
 Basic package to enable usefull transformers in scikit-learn pipelines.
 
