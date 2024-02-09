@@ -6,8 +6,7 @@ import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from ..validators import manage_input, manage_output, manage_negatives
-
+from ..validators import manage_input, manage_negatives, manage_output
 
 pd.set_option("future.no_silent_downcasting", True)
 
@@ -26,6 +25,7 @@ class LogColumnTransformer(BaseEstimator, TransformerMixin):
     def __init__(
         self,
         threshold: int | float = 3,
+        ignore_int: bool = False,
         force_df_out: bool = False,
     ):
         """Initialize the transformer"""
@@ -37,6 +37,7 @@ class LogColumnTransformer(BaseEstimator, TransformerMixin):
             raise TypeError("out must be a boolean")
 
         self.force_df_out = force_df_out
+        self.ignore_int = ignore_int
         self.threshold = threshold
         self._log_cols = None
         self._standard_cols = None
@@ -59,6 +60,11 @@ class LogColumnTransformer(BaseEstimator, TransformerMixin):
         _X = manage_input(X)
 
         manage_negatives(_X)
+
+        _X = _X.select_dtypes(include=["number"])
+
+        if self.ignore_int:
+            _X = _X.select_dtypes(exclude=["int"])
 
         # compute skew
         skew = _X.skew().round(3).to_dict()

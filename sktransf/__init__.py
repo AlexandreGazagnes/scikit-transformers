@@ -18,11 +18,7 @@ It was created to provide a simple way to use custom transformers in scikit-lear
 The starting point was to provide a simple LogColumnTransformer, which is a simple wrapper around the numpy log function, making possible to use a skew threshold to apply the log transformation only on columns with a skew superior to a given threshold inside a GridSearchCV.
 """
 
-from . import utils
-from . import transformer
-from . import selector
-from . import scaler
-from . import cleaner
+from . import cleaner, scaler, selector, transformer, utils
 
 __all__ = [
     "transformer",

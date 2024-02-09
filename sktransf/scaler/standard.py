@@ -5,17 +5,14 @@ BoolColumnTransformer
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
-
 from sklearn.preprocessing import StandardScaler as _StandardScaler
 
-from ..validators import manage_input, manage_output, manage_nan
-
+from ..validators import manage_input, manage_nan, manage_output
 
 pd.set_option("future.no_silent_downcasting", True)
 
 
 class StandardScaler(BaseEstimator, TransformerMixin):
-
     def __init__(
         self,
         *,
@@ -25,7 +22,6 @@ class StandardScaler(BaseEstimator, TransformerMixin):
         force_df_out: bool = False,
         ignore_nan: bool = True,
     ) -> None:
-
         # super().__init__(copy=copy, with_mean=with_mean, with_std=with_std)
 
         self.sca = _StandardScaler(
@@ -35,7 +31,6 @@ class StandardScaler(BaseEstimator, TransformerMixin):
         self.force_df_out = force_df_out
 
     def fit(self, X, y=None):
-
         _X = manage_input(X)
         _X = manage_nan(_X, self.ignore_nan)
 

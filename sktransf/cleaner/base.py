@@ -6,16 +6,14 @@ import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from ..selector import DropUniqueColumnSelector, DropSkuColumnSelector
+from ..selector import DropSkuColumnSelector, DropUniqueColumnSelector
 from ..transformer import BoolColumnTransformer, LogColumnTransformer
-from ..validators import manage_input, manage_output, manage_nan
-
+from ..validators import manage_input, manage_nan, manage_output
 
 pd.set_option("future.no_silent_downcasting", True)
 
 
 class BaseDataCleaner(BaseEstimator, TransformerMixin):
-
     def __init__(
         self,
         skew_threshold: float = 1.5,
@@ -44,8 +42,7 @@ class BaseDataCleaner(BaseEstimator, TransformerMixin):
             force_df_out=True,
         )
         self.log = LogColumnTransformer(
-            skew_threshold=self.skew_threshold,
-            ignore_nan=self.ignore_nan,
+            threshold=self.skew_threshold,
             force_df_out=True,
         )
 
@@ -62,7 +59,7 @@ class BaseDataCleaner(BaseEstimator, TransformerMixin):
         self.sku.fit(_X)
         self.unique.fit(_X)
         self.bool.fit(_X)
-        self.log.fit(_X)
+        self.log.fit(_X.select_dtypes(include=[np.number]))
 
         return self
 

@@ -3,8 +3,9 @@ Module for validators and decorators
 """
 
 import logging
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
 
 def manage_input(X):
@@ -67,7 +68,6 @@ def manage_nan(_X: pd.DataFrame, ignore_nan: bool = True):
 
 
 def manage_negatives(_X: pd.DataFrame):
-
     # no negative values
     min_ = _X.select_dtypes("number").min()
     if min_.min() < 0:

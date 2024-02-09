@@ -6,8 +6,7 @@ import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from ..validators import manage_input, manage_output, manage_nan
-
+from ..validators import manage_input, manage_nan, manage_output
 
 pd.set_option("future.no_silent_downcasting", True)
 
@@ -48,7 +47,6 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
 
         self._values = {}
         for col in self._bool_cols:
-
             # find values
             values = _X[col].unique()
 
@@ -67,7 +65,6 @@ class BoolColumnTransformer(BaseEstimator, TransformerMixin):
         _X = manage_input(X)
 
         for col in self._bool_cols:
-
             # check if column exists
             if col not in _X.columns:
                 continue
