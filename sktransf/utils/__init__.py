@@ -1,3 +1,7 @@
+"""
+Utils module
+"""
+
 from .get_titanic import get_titanic
 from .use_case import use_case
 

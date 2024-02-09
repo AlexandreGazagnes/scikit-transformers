@@ -20,7 +20,7 @@ pd.set_option("future.no_silent_downcasting", True)
 
 
 class DropSkuColumnSelector(BaseEstimator, TransformerMixin):
-    """Drops columns too many unique values"""
+    """Drops columns with too many unique values"""
 
     threshold = SkuThreshold()
     ignore_float = Bool()

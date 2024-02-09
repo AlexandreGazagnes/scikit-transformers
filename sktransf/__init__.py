@@ -11,7 +11,6 @@ Init file for sktransf package.
 __version__ = "0.3.0"
 __description__ = "scikit-transformers is a very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers."
 __doc__ = """
-
 **scikit-transformers** is a very usefull package to enable and provide custom transformers such as ```LogColumnTransformer```, ```BoolColumnTransformers``` and others fancy transformers.
 
 It was created to provide a simple way to use custom transformers in ```scikit-learn``` pipelines, and allow to use them in a ```scikit-learn ```model, using ```GridSearchCV``` for testing and tuning hyperparameters.

@@ -23,7 +23,7 @@ pd.set_option("future.no_silent_downcasting", True)
 
 
 class BaseDataCleaner(BaseEstimator, TransformerMixin):
-    """Data cleaner"""
+    """BaseDataCleaner : perform some basic cleaning for a dataframe"""
 
     skew_threshold = SkewThreshold()
     sku_threshold = SkuThreshold()

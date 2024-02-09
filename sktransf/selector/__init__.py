@@ -1,3 +1,7 @@
+"""
+Selector module
+"""
+
 from .sku import DropSkuColumnSelector
 from .unique import DropUniqueColumnSelector
 

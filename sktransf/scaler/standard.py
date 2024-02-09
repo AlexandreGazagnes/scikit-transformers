@@ -22,6 +22,8 @@ pd.set_option("future.no_silent_downcasting", True)
 
 
 class StandardScaler(BaseEstimator, TransformerMixin):
+    """Basic Standard scaler"""
+
     copy = Bool()
     with_mean = Bool()
     with_std = Bool()
