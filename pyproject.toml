@@ -1,19 +1,57 @@
 [tool.poetry]
 name = "scikit-transformers"
-version = "0.2.1"
-description = "Very Basic package make some usefull log transformation for scikit-learn"
-authors = ["AlexandreGazagnes <alex@gazagnes.net>"]
+version = "0.2.2"
+description = "Very usefull package make some usefull log transformation for scikit-learn"
+# dynamic = ["version", "description"]
+license = "GPL-3.0-or-later"
+authors = ["AlexandreGazagnes <alex@gazagnes.net>",]
+maintainers =  ["AlexandreGazagnes <alex@gazagnes.net>",]
 readme = "README.md"
+
+homepage = "https://alexandregazagnes.github.io/scikit-transformers/"
+repository = "https://github.com/AlexandreGazagnes/scikit-transformers/"
+documentation = "https://alexandregazagnes.github.io/scikit-transformers/"
+
+keywords=["python", "machine learning", "sklearn", "transformers", "scikit-learn", "tools", "data", "pandas"]
+classifiers = [
+    "License :: OSI Approved :: GNU GPLv3 License",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Data Scientists",
+    "Intended Audience :: Data Engineers",
+    "Intended Audience :: Data Analysts",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Data/Engineering",
+
+]
+
 packages = [{include = "sktransf"}]
-urls = { "Code" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main", "Documentation" = "https://alexandregazagnes.github.io/scikit-transformers/", "Repository" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main" }
+include = ["docs/docs/CHANGELOG.md"]
+
+# install_requires=["pandas", "scikit-learn"]
+# requires-python = ">=3.6"
+# dependencies = [
+#     "scikit-learn>=1.0.0",
+#     "pandas>=1.4.0"
+# ]
+
+[tool.poetry.urls]
+"Homepage" = "https://alexandregazagnes.github.io/scikit-transformers/"
+"Documentation" = "https://alexandregazagnes.github.io/scikit-transformers/"
+"Repository" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main"
+"Code" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main"
+"Issues" = "https://github.com/AlexandreGazagnes/scikit-transformers/issues"
+"Changelog" = "https://alexandregazagnes.github.io/scikit-transformers/CHANGELOG/"
 
 [tool.poetry.dependencies]
-python = "3.10.12"
-# python = "3.11.3"
+python = ">=3.6"
 scikit-learn = ">=1.0.0"
 pandas = ">=1.4.0"
 
 [tool.poetry.group.dev.dependencies]
+python = "3.10.12"
 jupyter = "^1.0.0"
 notebook = "^7.0.6"
 jupyterlab = "^4.0.10"
@@ -26,9 +64,6 @@ black = {extras = ["jupyter"], version = "^23.10.1"}
 ipython = "^8.18.1"
 seaborn = "^0.13.2"
 pre-commit = "^3.6.0"
-
-[tool.poetry.group.docs.dependencies]
-mkdocs = "^1.5.3"
 
 [tool.poetry.group.qa.dependencies]
 black = {extras = ["jupyter"], version = "^23.10.1"}
@@ -51,6 +86,9 @@ safety = "^3.0.1"
 pytest = "^7.4.3"
 coverage = "^7.4.1"
 coverage-badge = "^1.1.0"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
 
 [tool.black]
 line-length = 79
