@@ -1,8 +1,14 @@
+"""
+Test LogColumnTransformer
+"""
+
+import logging
+
 import numpy as np
 import pandas as pd
 import pytest
 
-from sktransf import LogColumnTransformer
+from sktransf.transformer import LogColumnTransformer
 
 
 class TestLogColumnTransformer:
@@ -52,12 +58,15 @@ class TestLogColumnTransformer:
 
         assert isinstance(X_, pd.DataFrame)
 
+        logging.warning(X_.head())
+
         assert X_.SibSp.values.tolist() != X.SibSp.values.tolist()
         assert X_.Fare.values.tolist() != X.Fare.values.tolist()
         assert X_.Pclass.values.tolist() == X.Pclass.values.tolist()
 
     @pytest.mark.parametrize(
-        "threshold,cols", [(0, ["Age", "Fare", "Parch", "SibSp"]), (100, [])]
+        "threshold,cols",
+        [(0, ["Age", "Fare", "Parch", "PassengerId", "SibSp"]), (100, [])],
     )
     def test_treshold(self, X: pd.DataFrame, threshold: int, cols: list):
         """Test the threshold attribute"""

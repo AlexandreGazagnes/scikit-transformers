@@ -3,7 +3,7 @@ import pytest
 import numpy as np
 import pandas as pd
 
-from sktransf import BoolColumnTransformer
+from sktransf.transformer import BoolColumnTransformer
 
 
 class TestBoolColumnTransformer:
@@ -22,7 +22,7 @@ class TestBoolColumnTransformer:
         # create the transformer
         transformer = BoolColumnTransformer(force_df_out=True)
 
-        assert transformer.bool_cols is None
+        assert transformer._bool_cols is None
 
     def test_fit(self, X_bool: pd.DataFrame):
         """Test the fit method"""
@@ -33,7 +33,7 @@ class TestBoolColumnTransformer:
         # fit the transformer
         transformer.fit(X_bool)
 
-        assert transformer.bool_cols == ["bool_col"]
+        assert transformer._bool_cols == ["bool_col"]
 
     def test_transform(self, X_bool: pd.DataFrame):
         """Test the transform method"""

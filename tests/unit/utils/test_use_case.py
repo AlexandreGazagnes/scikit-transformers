@@ -4,7 +4,7 @@ Test _utils module
 
 from sklearn.model_selection import GridSearchCV
 
-from sktransf._use_case import use_case
+from sktransf.utils import use_case
 
 
 class TestUseCase:

@@ -1,11 +1,16 @@
+"""
+
+"""
+
 import pytest
+
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from sktransf import BoolColumnTransformer
+from sktransf.transformer import BoolColumnTransformer
 
 
 @pytest.fixture

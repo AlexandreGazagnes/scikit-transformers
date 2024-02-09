@@ -7,11 +7,11 @@ import pytest
 import numpy as np
 import pandas as pd
 
-from sktransf import DropUniqueColumnTransformer
+from sktransf.selector import DropUniqueColumnSelector
 
 
-class TestDropUniqueColumnTransformer:
-    """Test for DropUniqueColumnTransformer"""
+class TestDropUniqueColumnSelector:
+    """Test for DropUniqueColumnSelector"""
 
     def test_X(self, X_unique: pd.DataFrame):
         """Test the fit method"""
@@ -24,22 +24,22 @@ class TestDropUniqueColumnTransformer:
         """Test the init method"""
 
         # create the transformer
-        transformer = DropUniqueColumnTransformer(force_df_out=True)
+        transformer = DropUniqueColumnSelector(force_df_out=True)
 
-        assert transformer.unique_cols is None
+        assert transformer._unique_cols is None
 
     def test_fit(self, X_unique: pd.DataFrame):
         # create the transformer
-        transformer = DropUniqueColumnTransformer(force_df_out=True)
+        transformer = DropUniqueColumnSelector(force_df_out=True)
 
         # fit the transformer
         transformer.fit(X_unique)
 
-        assert transformer.unique_cols == ["unique_col"]
+        assert transformer._unique_cols == ["unique_col"]
 
     def test_transform(self, X_unique: pd.DataFrame):
         # create the transformer
-        transformer = DropUniqueColumnTransformer(force_df_out=True)
+        transformer = DropUniqueColumnSelector(force_df_out=True)
 
         # fit the transformer
         transformer.fit(X_unique)
@@ -67,7 +67,7 @@ class TestDropUniqueColumnTransformer:
         """Test the force_df_out attribute"""
 
         # create the transformer
-        transformer = DropUniqueColumnTransformer(force_df_out=force_df_out)
+        transformer = DropUniqueColumnSelector(force_df_out=force_df_out)
 
         # fit the transformer
         transformer.fit(X)

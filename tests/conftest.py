@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from sktransf._get_titanic import get_titanic
+from sktransf.utils import get_titanic
 
 
 @pytest.fixture
@@ -19,6 +19,24 @@ def X() -> pd.DataFrame:
     X, _ = X_y = get_titanic()
 
     return X
+
+
+# @pytest.fixture
+# def X_sca() -> pd.DataFrame:
+#     """Load the data"""
+
+#     X, _ = X_y = get_titanic(only_num=True)
+
+#     return X
+
+
+# @pytest.fixture
+# def X_sku() -> pd.DataFrame:
+#     """Load the data"""
+
+#     X, _ = X_y = get_titanic()
+
+#     return X
 
 
 @pytest.fixture
