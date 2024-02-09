@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "scikit-transformers"
 version = "0.2.2"
-description = "Very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers."
+description = "scikit-transformers is a very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers."
 # dynamic = ["version", "description"]
 license = "GPL-3.0"
 authors = ["AlexandreGazagnes <alex@gazagnes.net>",]
@@ -28,7 +28,7 @@ classifiers = [
 ]
 
 packages = [{include = "sktransf"}]
-include = ["docs/docs/CHANGELOG.md"]
+include = ["docs/docs/CHANGELOG.md", "LICENCE"]
 
 
 [tool.poetry.urls]
