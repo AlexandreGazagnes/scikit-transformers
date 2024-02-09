@@ -1,11 +1,16 @@
+"""
+TestDropUniqueColumnSelector
+"""
+
 import pytest
+
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from sktransf import DropUniqueColumnTransformer
+from sktransf.selector import DropUniqueColumnSelector
 
 
 @pytest.fixture
@@ -15,7 +20,7 @@ def pipeline():
     pipeline = Pipeline(
         [
             ("imputer", SimpleImputer()),
-            ("unique", DropUniqueColumnTransformer()),
+            ("unique", DropUniqueColumnSelector()),
             ("scaler", StandardScaler()),
             ("estimator", LogisticRegression()),
         ]
@@ -24,7 +29,7 @@ def pipeline():
     return pipeline
 
 
-class TestDropUniqueColumnTransformer:
+class TestDropUniqueColumnSelector:
     """Test class for skres package"""
 
     def test_integration(self, X_y: tuple, pipeline: Pipeline):
