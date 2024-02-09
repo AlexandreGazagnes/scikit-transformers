@@ -19,8 +19,8 @@ class TestGetTitanic:
 
         X, y = get_titanic()
 
-        logging.warning(f"X: {X.head()}")
-        logging.warning(f"y: {y.head()}")
+        logging.debug(f"X: {X.head()}")
+        logging.debug(f"y: {y.head()}")
 
         assert isinstance(X, pd.DataFrame)
         assert isinstance(y, pd.Series)

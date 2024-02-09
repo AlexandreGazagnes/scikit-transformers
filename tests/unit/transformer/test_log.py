@@ -58,7 +58,7 @@ class TestLogColumnTransformer:
 
         assert isinstance(X_, pd.DataFrame)
 
-        logging.warning(X_.head())
+        logging.debug(X_.head())
 
         assert X_.SibSp.values.tolist() != X.SibSp.values.tolist()
         assert X_.Fare.values.tolist() != X.Fare.values.tolist()
