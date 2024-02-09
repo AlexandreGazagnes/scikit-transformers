@@ -24,7 +24,6 @@ The starting point was to provide a simple ```LogColumnTransformer```, which is 
 
 With ```scikit-transformers```, it is now possible to use this ```LogColumnTransformer``` in transformer in a ```GridSearchCV``` using a skew threshold as hyperparameter to find what columns are good to log or not.
 
-
 ```LogColumnTransformer``` is one of the many transformers implemented in ```scikit-transformers```.
 
 
