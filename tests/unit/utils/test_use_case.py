@@ -3,7 +3,6 @@ TestUseCase
 """
 
 import pytest
-
 from sklearn.model_selection import GridSearchCV
 
 from sktransf.utils import use_case

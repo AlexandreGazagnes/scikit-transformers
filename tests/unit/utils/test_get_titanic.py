@@ -4,9 +4,8 @@ TestGetTitanic
 
 import logging
 
-import pytest
-
 import pandas as pd
+import pytest
 
 from sktransf.utils import get_titanic
 
