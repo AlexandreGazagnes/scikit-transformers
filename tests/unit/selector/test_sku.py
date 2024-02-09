@@ -1,10 +1,11 @@
 """
-Unique Bool transformer
+TestDropSkuColumnSelector
 """
+
+import pytest
 
 import numpy as np
 import pandas as pd
-import pytest
 
 from sktransf.selector import DropSkuColumnSelector
 
@@ -26,6 +27,8 @@ class TestDropSkuColumnSelector:
         assert transformer._sku_cols is None
 
     def test_fit(self, X: pd.DataFrame):
+        """Test the fit method"""
+
         # create the transformer
         transformer = DropSkuColumnSelector(force_df_out=True)
 
@@ -35,6 +38,8 @@ class TestDropSkuColumnSelector:
         assert "PassengerId" in transformer._sku_cols
 
     def test_transform(self, X: pd.DataFrame):
+        """Test the trasnform method"""
+
         # create the transformer
         transformer = DropSkuColumnSelector(force_df_out=True)
 

@@ -1,10 +1,11 @@
 """
-StandardScaler
+TestStandardScaler
 """
+
+import pytest
 
 import numpy as np
 import pandas as pd
-import pytest
 
 from sktransf.scaler import StandardScaler
 
@@ -24,7 +25,7 @@ class TestStandardScaler:
         transformer = StandardScaler(force_df_out=True)
 
     def test_fit(self, X: pd.DataFrame):
-        """ """
+        """Test the fit method"""
 
         # create the transformer
         transformer = StandardScaler(force_df_out=True)
@@ -33,6 +34,8 @@ class TestStandardScaler:
         transformer.fit(X)
 
     def test_transform(self, X: pd.DataFrame):
+        """Test the transform method"""
+
         # create the transformer
         transformer = StandardScaler(force_df_out=True)
 

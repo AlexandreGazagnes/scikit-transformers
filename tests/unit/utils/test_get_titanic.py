@@ -1,11 +1,12 @@
 """
-Test get_titanic function
+TestGetTitanic
 """
 
 import logging
 
-import pandas as pd
 import pytest
+
+import pandas as pd
 
 from sktransf.utils import get_titanic
 

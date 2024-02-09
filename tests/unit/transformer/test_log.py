@@ -4,9 +4,10 @@ Test LogColumnTransformer
 
 import logging
 
+import pytest
+
 import numpy as np
 import pandas as pd
-import pytest
 
 from sktransf.transformer import LogColumnTransformer
 

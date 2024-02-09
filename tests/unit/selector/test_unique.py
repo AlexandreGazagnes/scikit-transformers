@@ -1,10 +1,11 @@
 """
-Unique Bool transformer
+TestDropUniqueColumnSelector
 """
+
+import pytest
 
 import numpy as np
 import pandas as pd
-import pytest
 
 from sktransf.selector import DropUniqueColumnSelector
 
@@ -28,6 +29,8 @@ class TestDropUniqueColumnSelector:
         assert transformer._unique_cols is None
 
     def test_fit(self, X_unique: pd.DataFrame):
+        """Test the fit method"""
+
         # create the transformer
         transformer = DropUniqueColumnSelector(force_df_out=True)
 
@@ -37,6 +40,8 @@ class TestDropUniqueColumnSelector:
         assert transformer._unique_cols == ["unique_col"]
 
     def test_transform(self, X_unique: pd.DataFrame):
+        """Test the transform method"""
+
         # create the transformer
         transformer = DropUniqueColumnSelector(force_df_out=True)
 

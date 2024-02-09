@@ -1,6 +1,8 @@
 """
-Test _utils module
+TestUseCase
 """
+
+import pytest
 
 from sklearn.model_selection import GridSearchCV
 
