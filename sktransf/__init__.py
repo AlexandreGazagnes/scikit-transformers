@@ -1,23 +1,27 @@
-__version__ = "0.2.2"
-__description__ = """
-Basic package to enable usefull and custom transformers in scikit-learn pipelines."""
-__doc__ = """
-Basic package to enable usefull transformers in scikit-learn pipelines.
-
-First transformer implemented is a LogTransformer, which is a simple wrapper
-around the numpy log function.
+"""
+Init file for sktransf package.
 """
 
-from ._get_titanic import get_titanic
-from ._use_case import use_case
+# import importlib.metadata
+
+# __version__ = importlib.metadata.metadata(__package__)["version"]
+# __description__ = importlib.metadata.metadata(__package__)["description"]
+# __doc__ = importlib.metadata.metadata(__package__)["description"]
+
+__version__ = "0.2.2"
+__description__ = "Very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers."
+__doc__ = """
+Very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers.
+
+It was created to provide a simple way to use custom transformers in scikit-learn pipelines, and allow to use them in a scikit-learn model, using GridSearchCV for testing and tuning hyperparameters.
+
+The starting point was to provide a simple LogColumnTransformer, which is a simple wrapper around the numpy log function, making possible to use a skew threshold to apply the log transformation only on columns with a skew superior to a given threshold inside a GridSearchCV.
+"""
+
+import utils
 from .bool import BoolColumnTransformer
 from .unique import DropUniqueColumnTransformer
 from .log import LogColumnTransformer
-
-
-class utils:
-    get_titanic = get_titanic
-    use_case = use_case
 
 
 __all__ = [
