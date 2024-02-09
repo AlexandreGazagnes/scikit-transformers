@@ -5,19 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
-## Not released - 2024-02-10
+## [0.3.0] - 2024-02-10
 
 ### Added
-- Add validators 
+- Add validators for all classes
 - Add Cleaner module 
-- Add StandardScaler
-- Add transformers, validators, and cleaner import 
-- Add validatiors 
+- Add StandardScaler implementation
+- Manage problem of data drift train / test 
+
 
 ### Updated
 - Moove .utils to root folder
-- Moove src utils to sub module
-- Clean .utils files
+- Reshape entire module using transformer, cleaner, scaler, and selector
+- Reshape pyproject and documentation
 
 ## [0.2.1] - 2024-02-09
 
