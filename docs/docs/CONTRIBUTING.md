@@ -52,18 +52,27 @@ using:
 
 ## Documentation
 
-For generic use case, please refer to this [notebook](docs/simple_example.ipynb).
+## Documentation
+
+For more specific information, please refer to the notebooks: 
+- [Pipelines notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/Pipelines.ipynb)
+- [BoolColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/BoolColumnTransformer.ipynb)
+- [DropUniqueColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/DropUniqueColumnTransformer.ipynb)
+- [LogColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/LogColumnTransformer.ipynb)
+
 
 <!-- For more specific use case, please refer to this [notebook](docs/detailed_example.ipynb). -->
 
 <!-- For more detailed information, please refer to the [documentation](https://alexandregazagnes.github.io/scikit-transformers/). -->
 
-A complete documentation will be soon available [here](https://alexandregazagnes.github.io/scikit-transformers/).
+A complete documentation is be available on the  [github page](https://alexandregazagnes.github.io/scikit-transformers/).
+
 
 
 ## Contributing
 
-Best way to contribute is to open an issue and discuss about it.
+Pull requests are welcome.
 
-Feel free to fork the project and make a pull request.
-In such case, please make sure to follow the [contribution guidelines](./docs/docs/CONTRIBUTING.md).
+For major changes, please open an issue first to discuss what you would like to change.
+
+For more information, please refer to the [contributing](https://alexandregazagnes.github.io/scikit-transformers/CONTRIBUTING/) page.

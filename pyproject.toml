@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "scikit-transformers"
-version = "0.3.0"
+version = "0.3.1"
 description = "scikit-transformers is a very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers."
 # dynamic = ["version", "description"]
 license = "GPL-3.0"
@@ -14,16 +14,18 @@ documentation = "https://alexandregazagnes.github.io/scikit-transformers/"
 
 keywords=["python", "machine learning", "sklearn", "transformers", "scikit-learn", "tools", "data", "pandas"]
 classifiers = [
-    "License :: OSI Approved :: GNU GPLv3 License",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Intended Audience :: Developers",
-    "Intended Audience :: Data Scientists",
-    "Intended Audience :: Data Engineers",
-    "Intended Audience :: Data Analysts",
+    "Intended Audience :: Education", 
+    "Intended Audience :: Information Technology",
+    "Environment :: Other Environment",
+    "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Topic :: Scientific/Engineering",
-    "Topic :: Data/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence", 
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules"
 
 ]
 
