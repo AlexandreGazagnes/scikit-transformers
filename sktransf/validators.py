@@ -2,7 +2,6 @@
 Module for validators and decorators 
 """
 
-import logging
 
 import numpy as np
 import pandas as pd
