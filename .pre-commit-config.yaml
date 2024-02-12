@@ -70,5 +70,5 @@ repos:
     -   id: run_tests
         language: script
         name: run_tests
-        entry: ./docs/.utils/pytest.sh
+        entry: .utils/pytest.sh
         stage: [commit]

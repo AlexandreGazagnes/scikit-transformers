@@ -16,14 +16,14 @@ keywords=["python", "machine learning", "sklearn", "transformers", "scikit-learn
 classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Intended Audience :: Developers",
-    "Intended Audience :: Education", 
+    "Intended Audience :: Education",
     "Intended Audience :: Information Technology",
     "Environment :: Other Environment",
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Topic :: Scientific/Engineering :: Artificial Intelligence", 
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Scientific/Engineering :: Information Analysis",
     "Topic :: Software Development :: Libraries :: Python Modules"
 
@@ -46,6 +46,8 @@ include = ["docs/docs/CHANGELOG.md", "LICENCE"]
 python = ">=3.9,<4"
 scikit-learn = ">=1.0.0"
 pandas = ">=1.4.0"
+# coverage = "^7.4.1"
+# coverage-badge = "^1.1.0"
 
 
 
