@@ -37,13 +37,13 @@ include = ["docs/docs/CHANGELOG.md", "LICENCE"]
 "Homepage" = "https://alexandregazagnes.github.io/scikit-transformers/"
 "Documentation" = "https://alexandregazagnes.github.io/scikit-transformers/"
 "Repository" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main"
-"Code" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main"
+# "Code" = "https://github.com/AlexandreGazagnes/scikit-transformers/tree/main"
 "Issues" = "https://github.com/AlexandreGazagnes/scikit-transformers/issues"
 "Changelog" = "https://alexandregazagnes.github.io/scikit-transformers/CHANGELOG/"
 
 
 [tool.poetry.dependencies]
-python = ">=3.6"
+python = ">=3.9,<4"
 scikit-learn = ">=1.0.0"
 pandas = ">=1.4.0"
 
