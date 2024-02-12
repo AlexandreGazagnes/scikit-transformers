@@ -45,7 +45,7 @@ _Write here the code to reproduce the bug_
 ### Error message
 
 _Write here the error message_
-```shell
+```bash
 # Your error message here
 ```
 
