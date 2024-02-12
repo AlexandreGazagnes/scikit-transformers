@@ -2,9 +2,9 @@ name: Statics
 
 on:
   push:
-    branches: [ main, dev]
+    branches: [ main, dev, "*"]
   pull_request:
-    branches: [ main, dev]
+    branches: [ main, dev, "*"]
 
 jobs:
 
@@ -52,7 +52,7 @@ jobs:
       #   run: poetry run pycln . # --check-only --profile black
 
       - name: Run bandit
-        run: poetry run bandit 
+        run: poetry run bandit
 
       - name: Run safety
         run: poetry run safety check
