@@ -8,7 +8,7 @@ Init file for sktransf package.
 # __description__ = importlib.metadata.metadata(__package__)["description"]
 # __doc__ = importlib.metadata.metadata(__package__)["description"]
 
-__version__ = "0.3.1"
+__version__ = "0.3.2"
 __description__ = "scikit-transformers is a very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers."
 __doc__ = """
 **scikit-transformers** is a very usefull package to enable and provide custom transformers such as ```LogColumnTransformer```, ```BoolColumnTransformers``` and others fancy transformers.

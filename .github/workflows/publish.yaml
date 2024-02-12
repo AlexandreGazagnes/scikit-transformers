@@ -15,10 +15,15 @@ jobs:
 
     steps:
 
-      - name: Publish PyPi package
-        uses: code-specialist/pypi-poetry-publish@v1
+      # - name: Publish PyPi package
+      #   uses: code-specialist/pypi-poetry-publish@v1
+      #   with:
+      #     PACKAGE_DIRECTORY: "./sktransf/"
+      #     PYTHON_VERSION: "3.10.12"
+      #     ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PUBLISH_REGISTRY_PASSWORD }}
+
+      - name: Build and publish to pypi
+        uses: JRubics/poetry-publish@v2.0
         with:
-          PACKAGE_DIRECTORY: "./sktransf/"
-          PYTHON_VERSION: "3.10.12"
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PUBLISH_REGISTRY_PASSWORD }}
+          pypi_token: ${{ secrets.PYPI_TOKEN }}
