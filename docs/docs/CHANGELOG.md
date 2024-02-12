@@ -5,13 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
+## [0.3.2] - 2024-02-10
+
+### Updated
+- fix ci/cd problems
+
+### Todo
+- use ruff
+- fix publish action
+
 ## [0.3.0] - 2024-02-10
 
 ### Added
 - Add validators for all classes
-- Add Cleaner module 
+- Add Cleaner module
 - Add StandardScaler implementation
-- Manage problem of data drift train / test 
+- Manage problem of data drift train / test
 
 
 ### Updated

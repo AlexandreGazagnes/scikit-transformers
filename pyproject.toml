@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "scikit-transformers"
-version = "pre0.3.1.1"
+version = "0.3.2"
 description = "scikit-transformers is a very usefull package to enable and provide custom transformers such as LogColumnTransformer, BoolColumnTransformers and others fancy transformers."
 # dynamic = ["version", "description"]
 license = "GPL-3.0"
