@@ -51,6 +51,7 @@ pandas = ">=1.4.0"
 
 
 
+
 [tool.poetry.group.dev.dependencies]
 python = "3.10.12"
 black = "^23.10.1"
@@ -97,6 +98,7 @@ coverage-badge = "^1.1.0"
 
 [tool.poetry.group.doc.dependencies]
 mkdocs = "^1.5.3"
+mkdocs-material = "^9.5.9"
 
 
 [tool.black]
