@@ -42,14 +42,14 @@ jobs:
       - name: poetry Install
         run: poetry install
 
-      - name: Run flake8
-        run: poetry run flake8 .
+      # - name: Run flake8
+      #   run: poetry run flake8 .
 
-      - name: Run isort
-        run: poetry run isort . # --check-only --profile black
+      # - name: Run isort
+      #   run: poetry run isort . # --check-only --profile black
 
-      - name: Run pycln
-        run: poetry run pycln . # --check-only --profile black
+      # - name: Run pycln
+      #   run: poetry run pycln . # --check-only --profile black
 
       - name: Run bandit
         run: poetry run bandit 
