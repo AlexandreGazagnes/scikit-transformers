@@ -40,7 +40,7 @@ jobs:
         run: poetry --help
 
       - name: poetry Install
-        run: poetry install
+        run: poetry install --only doc
 
       - name: Run pwd
         run: pwd

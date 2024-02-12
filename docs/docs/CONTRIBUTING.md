@@ -52,20 +52,17 @@ using:
 
 ## Documentation
 
-## Documentation
-
 For more specific information, please refer to the notebooks: 
-- [Pipelines notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/Pipelines.ipynb)
-- [BoolColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/BoolColumnTransformer.ipynb)
-- [DropUniqueColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/DropUniqueColumnTransformer.ipynb)
-- [LogColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/LogColumnTransformer.ipynb)
 
+* Transformers : 
+  * [LogColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/transformer/LogColumnTransformer.ipynb)
+  * [BoolColumnTransformer notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/transformer/BoolColumnTransformer.ipynb)
+* Selectors : 
+  * [DropUniqueColumnSelector notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/selector/DropUniqueColumnSelector.ipynb)
+  * [DropSkuColumnSelector notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/selector/DropSkuColumnSelector.ipynb)
+* Pipelines :
+  * [Pipelines notebook](https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/Pipelines.ipynb)
 
-<!-- For more specific use case, please refer to this [notebook](docs/detailed_example.ipynb). -->
-
-<!-- For more detailed information, please refer to the [documentation](https://alexandregazagnes.github.io/scikit-transformers/). -->
-
-A complete documentation is be available on the  [github page](https://alexandregazagnes.github.io/scikit-transformers/).
 
 
 
