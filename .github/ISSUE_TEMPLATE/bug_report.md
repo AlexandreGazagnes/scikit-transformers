@@ -10,23 +10,45 @@ assignees: ""
 
 - **Operating System**:
 - **Python version**:
-- **audible version**:
+- **Pandas version** : 
+- **scikit-learn version** :  
+- **scikit-transformers version**:
 
 ## Acknowledgement
 
-- [ ] If I am on **Windows**, I read the [Troubleshooting page](https://alexandregazagnes.github.io/audible/troubleshooting/)
+- [ ] If I am on **Windows**, I read the [Documentation page](https://alexandregazagnes.github.io/scikit-transformers/)
       before writing a new bug report
 
 ## Bug description
 
-### Observed behavior
 
-_Write here the observed behavior_
+### Context
+
+_Write here the context of the bug_
 
 ### Expected behavior
 
 _Write here the expected behavior_
 
-## Minimal but working code sample to ease bug fix for `audible` team
+### Observed behavior
 
-_Write here the minimal code sample to ease bug fix for `audible` team_
+_Write here the observed behavior_
+
+### Code to reproduce the bug
+
+_Write here the code to reproduce the bug_
+
+```python
+# Your code here
+```
+
+### Error message
+
+_Write here the error message_
+```shell
+# Your error message here
+```
+
+## Minimal but working code sample to ease bug fix for `scikit-transformers` team
+
+_Write here the minimal code sample to ease bug fix for `scikit-transformers` team_

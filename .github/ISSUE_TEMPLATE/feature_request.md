@@ -7,5 +7,5 @@ assignees: ''
 
 ---
 
-**Please write here what feature `audible` is missing:**
-*Example: A new `audible` API which is not (yet) supported by now.*
+**Please write here what feature `scikit-transformers` is missing:**
+*Example: A new `scikit-transformers` API which is not (yet) supported.*
