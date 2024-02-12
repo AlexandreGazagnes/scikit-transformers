@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Scikit transformers is no more Scikit-learn + Custom Transformers" /><link rel="canonical" href="https://alexandregazagnes.github.io/scikit-transformers/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Sickit-Transformers</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/scikit-transformers/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> Sickit-Transformers
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#about">About</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#changelog-releases-and-roadmap">Changelog, Releases and Roadmap</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#license">License</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="usage/">Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING/">Contributing</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="CHANGELOG/">Changelog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">Sickit-Transformers</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/AlexandreGazagnes/scikit-transformers/edit/master/docs/docs/index.md">Edit on AlexandreGazagnes/scikit-transformers</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><img alt="image" src="https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/assets/img/img.png?raw=true" />
+<a href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a>
+<img alt="Python" src="https://img.shields.io/badge/python-3.10.x-green.svg" />
+<img alt="Repo Size" src="https://img.shields.io/github/repo-size/AlexandreGazagnes/scikit-transformers" />
+<a href="https://www.python.org/dev/peps/pep-0008/"><img alt="PEP8" src="https://img.shields.io/badge/code%20style-pep8-orange.svg" /></a>
+<a href="https://python-poetry.org/"><img alt="Poetry" src="https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json" /></a>
+<img alt="Coverage" src="https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/assets/img/cov.svg?raw=true" />
+<img alt="Tests" src="https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/tests.yaml/badge.svg" />
+<img alt="Statics" src="https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/statics.yaml/badge.svg" />
+<img alt="Doc" src="https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/docs.yaml/badge.svg" />
+<img alt="Pypi" src="https://github.com/AlexandreGazagnes/scikit-transformers/actions/workflows/publish.yaml/badge.svg" />
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/AlexandreGazagnes/scikit-transformers" /></p>
+<h1 id="scikit-transformers-scikit-learn-custom-transformers">Scikit-transformers : Scikit-learn + Custom transformers</h1>
+<h2 id="about">About</h2>
+<p><strong>scikit-transformers</strong> is a very usefull package to enable and provide custom transformers such as <code>LogColumnTransformer</code>, <code>BoolColumnTransformers</code> and others fancy transformers.</p>
+<p>It was created to provide a simple way to use custom transformers in <code>scikit-learn</code> pipelines, and allow to use them in a <code>scikit-learn</code>model, using <code>GridSearchCV</code> for testing and tuning hyperparameters.</p>
+<p>The starting point was to provide a simple <code>LogColumnTransformer</code>, which is a simple wrapper around the numpy log function, making possible to use a skew threshold to apply the log transformation only on columns with a skew superior to a given threshold.</p>
+<p>With <code>scikit-transformers</code>, it is now possible to use this <code>LogColumnTransformer</code> in transformer in a <code>GridSearchCV</code> using a skew threshold as hyperparameter to find what columns are good to log or not.</p>
+<p><code>LogColumnTransformer</code> is one of the many transformers implemented in <code>scikit-transformers</code>.</p>
+<h2 id="installation">Installation</h2>
+<p>Using regular pip and venv tools :</p>
+<pre><code class="language-bash">python3 -m venv .venv
+source .venv/bin/activate
+pip install scikit-transformers
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>For a very basic usage :</p>
+<pre><code class="language-python">import pandas as pd
+
+from sktransf.trasnformer import LogColumnTransformer
+
+df = pd.DataFrame(
+    { &quot;a&quot;: range(10),
+      &quot;b&quot;: range(10)
+    }
+)
+
+logger = LogColumnTransformer()
+logger.fit_transform(df)
+df_transf = logger.transform(df)
+</code></pre>
+<p>Using common transformers : </p>
+<pre><code class="language-python">import pandas as pd
+
+from sktransf.transformer import LogColumnTransformer, BoolColumnTransformer
+from sktransf.selector import DropUniqueColumnSelector
+
+df = pd.DataFrame(
+    { &quot;a&quot;: range(10),
+      &quot;b&quot;: range(10)
+    }
+)
+
+df_bool = BoolColumnTransformer().fit_transform(df)
+df_unique = DropUniqueColumnTransformer().fit_transform(df)
+df_logged = LogColumnTransformer().fit_transform(df)
+</code></pre>
+<p>Using a pipeline with a scikit-learn model : </p>
+<pre><code class="language-python">import pandas as pd
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LinearRegression
+
+from sktransf.transformer import LogColumnTransformer, BoolColumnTransformer
+from sktransf.selector import DropUniqueColumnSelector
+
+pipe = Pipeline([
+    ('bool', BoolColumnTransformer()),
+    ('unique', DropUniqueColumnTransformer()),
+    ('log', LogColumnTransformer()),
+    ('model', LinearRegression())
+])
+
+X = pd.DataFrame(
+    { &quot;a&quot;: range(10),
+      &quot;b&quot;: range(10)
+    }
+)
+
+y = range(10)
+
+pipe.fit(X, y)
+
+y_pred = pipe.predict(X)
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<p>For more specific information, please refer to the notebooks: </p>
+<ul>
+<li>Transformers : </li>
+<li><a href="https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/transformer/LogColumnTransformer.ipynb">LogColumnTransformer notebook</a></li>
+<li><a href="https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/transformer/BoolColumnTransformer.ipynb">BoolColumnTransformer notebook</a></li>
+<li>Selectors : </li>
+<li><a href="https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/selector/DropUniqueColumnSelector.ipynb">DropUniqueColumnSelector notebook</a></li>
+<li><a href="https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/selector/DropSkuColumnSelector.ipynb">DropSkuColumnSelector notebook</a></li>
+<li>Pipelines :</li>
+<li><a href="https://github.com/AlexandreGazagnes/scikit-transformers/blob/main/docs/notebooks/Pipelines.ipynb">Pipelines notebook</a></li>
+</ul>
+<p>A complete documentation is be available on the  <a href="https://alexandregazagnes.github.io/scikit-transformers/">github page</a>.</p>
+<h2 id="changelog-releases-and-roadmap">Changelog, Releases and Roadmap</h2>
+<p>Please refer to the <a href="https://alexandregazagnes.github.io/scikit-transformers/CHANGELOG/">changelog</a> page for more information.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Pull requests are welcome.</p>
+<p>For major changes, please open an issue first to discuss what you would like to change.</p>
+<p>For more information, please refer to the <a href="https://alexandregazagnes.github.io/scikit-transformers/CONTRIBUTING/">contributing</a> page.</p>
+<h2 id="license">License</h2>
+<p><a href="https://raw.githubusercontent.com/AlexandreGazagnes/scikit-transformers/main/LICENSE">GPLv3</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="installation/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2024-02-12 14:04:12.261644+00:00
+-->
