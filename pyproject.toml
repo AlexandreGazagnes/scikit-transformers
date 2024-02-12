@@ -95,7 +95,7 @@ coverage = "^7.4.1"
 coverage-badge = "^1.1.0"
 
 
-[tool.poetry.group.docs.dependencies]
+[tool.poetry.group.doc.dependencies]
 mkdocs = "^1.5.3"
 
 

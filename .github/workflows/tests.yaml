@@ -40,7 +40,7 @@ jobs:
         run: poetry --help
 
       - name: poetry Install
-        run: poetry install --without docs, static, notebook
+        run: poetry install --without doc, static, notebook
 
       - name: Run tests with pytest
         run: poetry run pytest
