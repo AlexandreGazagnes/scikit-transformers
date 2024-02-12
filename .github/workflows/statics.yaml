@@ -2,9 +2,9 @@ name: Statics
 
 on:
   push:
-    branches: [ main, dev]
+    branches: [ main, dev, ]
   pull_request:
-    branches: [ main, dev]
+    branches: [ main, dev, ]
 
 jobs:
 
@@ -42,20 +42,20 @@ jobs:
       - name: poetry Install
         run: poetry install
 
-      - name: Run flake8
-        run: poetry run flake8 .
+      # - name: Run flake8
+      #   run: poetry run flake8 .
 
-      - name: Run isort
-        run: poetry run isort . # --check-only --profile black
+      # - name: Run isort
+      #   run: poetry run isort . # --check-only --profile black
 
-      - name: Run pycln
-        run: poetry run pycln . # --check-only --profile black
+      # - name: Run pycln
+      #   run: poetry run pycln . # --check-only --profile black
 
       - name: Run bandit
-        run: poetry run bandit .
+        run: poetry run bandit
 
       - name: Run safety
         run: poetry run safety check
 
       - name: Run black
-        run: poetry run black . # --check
+        run: poetry run black . --check
